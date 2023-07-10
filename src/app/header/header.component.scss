@@ -1,0 +1,71 @@
+nav {
+    padding: 30px 100px 34px 54px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        height: 41px;
+        width: 185px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .logoIcon {
+            display: block;
+            width: 50px;
+            height: 32px;
+        }
+
+        .title {
+            margin-left: 5px;
+            color: #000;
+            font-family: Montserrat-Bold;
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+    }
+
+    .namedLink {
+
+
+        margin-left: 75px;
+
+        a {
+            color: #000;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        &:first-child {
+            margin-left: 0px;
+        }
+    }
+
+    .linkIconsList {
+        li{
+            margin-left: 45px;
+            &:first-child{
+                margin-left: 0px;
+            }
+        }
+        .linkIcon {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        li {
+            display: inline-block;
+            list-style-type: none;
+
+        }
+    }
+}
