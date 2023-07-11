@@ -18,7 +18,10 @@
     font-family: 'Poppins';
     src: url('./fonts/Poppins-Regular.ttf');
 }
-
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('./fonts/Poppins-Bold.ttf');
+}
 body {
     padding: 0px;
     margin: 0px;

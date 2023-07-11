@@ -1,26 +1,31 @@
-@mixin icon($filename){
+@mixin icon($filename) {
     mask-image: url("./icons/#{$filename}");
 }
 
-[class$="Icon"]{
+[class$="Icon"] {
     display: block;
     -webkit-mask-size: cover;
     mask-size: cover;
     background-color: black
 }
-.logoIcon{
+
+.logoIcon {
     @include icon("logo.svg");
     background-color: #b88e2f;
 }
-.cartIcon{
+
+.cartIcon {
     @include icon("cart.svg");
 }
-.heartIcon{
+
+.heartIcon {
     @include icon("heart.svg")
 }
-.searchIcon{
+
+.searchIcon {
     @include icon("search.svg")
 }
-.userIcon{
+
+.userIcon {
     @include icon("user.svg")
 }
