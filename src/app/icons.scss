@@ -29,3 +29,10 @@
 .userIcon {
     @include icon("user.svg")
 }
+
+.arrowIcon {
+    &.right {
+        @include icon("arrow.right.svg");
+    }
+
+}
