@@ -92,7 +92,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/fonts",
-              "src/app/icons"
+              "src/app/icons",
+              "src/app/images"
             ],
             "styles": [
               "src/styles.scss"

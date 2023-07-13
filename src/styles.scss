@@ -26,7 +26,9 @@ body {
     padding: 0px;
     margin: 0px;
 }
-
+a{
+    color: black;
+}
 a:link {
     text-decoration: none;
 }
@@ -41,4 +43,9 @@ a:hover {
 
 a:active {
     text-decoration: none;
+}
+
+.clickable{
+    cursor: pointer;
+    user-select: none;
 }

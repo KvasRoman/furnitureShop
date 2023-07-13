@@ -1,5 +1,5 @@
 @mixin icon($filename) {
-    mask-image: url("./icons/#{$filename}");
+    mask-image: url("/assets/icons/#{$filename}");
 }
 
 [class$="Icon"] {

@@ -1,0 +1,134 @@
+$primary: #B88E2F;
+$secondary: #FFF3E3;
+$gray: #666;
+$transitionDuration: 0.3s;
+
+.row {
+
+
+    &.discover {
+        background-image: url(/assets/images/scandinavian-interior-mockup.png);
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 58px;
+        height: 716px;
+
+        .box {
+            max-width: 643px;
+            max-height: 443px;
+            padding: 62px 43px 37px 39px;
+            background-color: $secondary;
+            border-radius: 8px;
+
+            p {
+                font-weight: 600;
+                letter-spacing: 3px;
+
+                &.description {
+                    margin-top: 17px;
+                    font-weight: 500;
+                    font-size: 18px;
+                    letter-spacing: normal;
+                }
+            }
+
+            h1 {
+                margin: 0px;
+                font-family: Poppins-Bold;
+                color: $primary;
+                font-size: 52px;
+                font-weight: 700;
+                line-height: 65px;
+            }
+
+            .button {
+                margin-top: 46px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 223px;
+                height: 74px;
+                background-color: $primary;
+
+                color: #FFF;
+                font-family: Poppins;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+            }
+        }
+
+    }
+
+    &.browseRange {
+        margin-top: 56px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .items {
+            margin-top: 48px;
+            display: flex;
+            flex-direction: row;
+
+            a {
+                margin-left: 20px;
+                &:first-child {
+                    margin-left: 0px;
+                }
+            }
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &:hover {
+                    .imgWrapper {
+                        filter: brightness(70%)
+                    }
+                }
+
+                p {
+                    margin: 0px;
+                    margin-top: 20px;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 600;
+                }
+            }
+
+            .imgWrapper {
+                transition-duration: $transitionDuration;
+            }
+        }
+    }
+
+    .title1 {
+        font-family: Poppins-Bold;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 120%;
+    }
+
+    .title2 {
+        margin: 0px;
+        font-family: Poppins-Bold;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 120%;
+    }
+
+    .subtitle {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        color: $gray;
+    }
+
+
+}

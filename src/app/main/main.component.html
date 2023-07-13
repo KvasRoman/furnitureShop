@@ -1,5 +1,5 @@
 <main>
-    <div class="row crumbBox" *ngIf="true">
+    <div class="row crumbBox" *ngIf="false">
         <span class="logoIcon"></span>
         <p class="title">Product Comparison</p>
         <nav class="crumbs">
@@ -10,4 +10,14 @@
             </ol>
         </nav>
     </div>
+    <div class="row smallCrumbBox " *ngIf="false">
+        <nav class="crumbs">
+            <ol>
+                <li class="crumb"><a href="#">Bikes</a> <i class="arrowIcon right"></i></li>
+                <li class="crumb"><a href="#">BMX</a> <i class="arrowIcon right"></i></li>
+                <li class="crumb">Jump Bike 3000</li>
+            </ol>
+        </nav>
+    </div>
+    <router-outlet></router-outlet>
 </main>
