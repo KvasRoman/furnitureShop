@@ -29,7 +29,15 @@
 .userIcon {
     @include icon("user.svg")
 }
-
+.compareIcon {
+    @include icon("compare.svg")
+}
+.shareIcon {
+    @include icon("share.svg")
+}
+.boldheartIcon{
+    @include icon("boldheart.svg")
+}
 .arrowIcon {
     &.right {
         @include icon("arrow.right.svg");

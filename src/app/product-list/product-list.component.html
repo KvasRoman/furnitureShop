@@ -1,0 +1,39 @@
+<div class="productItems">
+    <div *ngFor="let i of data | async | slice:0:quantity" class="productItem">
+        <div class="imageWrapper">
+            <img src={{i.imageUrl}} alt="">
+        </div>
+        <div class="productInfo">
+            <div class="title">
+                {{i.name}}
+            </div>
+            <div class="shortDescription">
+                {{i.shortDescription}}
+            </div>
+            <div class="price">
+                <span class="currentPrice" *ngIf="i.hasDiscount">
+                    $ {{i.price | numberWithCommas}}
+                </span>
+                <span class="previousPrice" *ngIf="i.hasDiscount">
+                    $ {{i.discountedPrice | numberWithCommas}}
+                </span>
+                <span class="currentPrice" *ngIf="!i.hasDiscount">
+                    $ {{i.price | numberWithCommas}}
+                </span>
+            </div>
+        </div>
+        <div class="discountBadge" *ngIf="i.hasDiscount">- {{ i.discountPercentage }}%</div>
+        <div class="newBadge" *ngIf="i.isNew">New</div>
+        <a href="">
+            <div class="popup clickable">
+                <div class="button clickable">Add to cart</div>
+                <div class="subactions">
+                    <div class="action"><i class="shareIcon"></i>Share</div>
+                    <div class="action"><i class="compareIcon"></i>Compare</div>
+                    <div class="action"><i class="boldheartIcon"></i>Like</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>

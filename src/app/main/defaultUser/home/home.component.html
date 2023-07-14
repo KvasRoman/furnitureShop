@@ -1,4 +1,4 @@
-<div class="row discover">
+<section class="row discover">
     <div class="box">
         <p>
             New Arrival
@@ -14,8 +14,8 @@
             BUY NOW
         </div>
     </div>
-</div>
-<div class="row browseRange">
+</section>
+<section class="row browseRange">
     <h2 class="title2">
         Browse The Range
     </h2>
@@ -27,4 +27,9 @@
         <a href=""><div class="item clickable"><div class="imgWrapper"><img src="/assets/images/livingRoom.png" alt=""></div><p>Living</p></div></a>
         <a href=""><div class="item clickable"><div class="imgWrapper"><img src="/assets/images/bedRoom.png" alt=""></div><p>Bedroom</p></div></a>
     </div>
-</div>
+</section>
+<section class="row productList">
+    <h1 class="title1">Our Products</h1>
+    <app-product-list [quantity]=8 [data]=this.data></app-product-list>
+    <div class="button clickable">Show More</div>
+</section>

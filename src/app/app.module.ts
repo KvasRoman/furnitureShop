@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './main/defaultUser/home/home.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { NumberWithCommasPipe } from './pipes/numberWithCommas.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { HomeComponent } from './main/defaultUser/home/home.component';
     HeaderComponent,
     MainComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    ProductListComponent,
+    NumberWithCommasPipe
   ],
   imports: [
     BrowserModule,
