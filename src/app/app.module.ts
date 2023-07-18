@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './main/defaultUser/home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { NumberWithCommasPipe } from './pipes/numberWithCommas.pipe';
+import { HomeSilderComponent } from './main/defaultUser/home/home-slider/home-slider.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NumberWithCommasPipe } from './pipes/numberWithCommas.pipe';
     FooterComponent,
     HomeComponent,
     ProductListComponent,
-    NumberWithCommasPipe
+    NumberWithCommasPipe,
+    HomeSilderComponent
   ],
   imports: [
     BrowserModule,

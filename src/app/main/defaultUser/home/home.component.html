@@ -4,7 +4,7 @@
             New Arrival
         </p>
         <h1>
-            Discover Our <br/>
+            Discover Our <br />
             New Collection
         </h1>
         <p class="description">
@@ -23,13 +23,46 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
     <div class="items">
-        <a href=""><div class="item clickable"><div class="imgWrapper"><img src="/assets/images/diningRoom.png" alt=""></div><p>Dining</p></div></a>
-        <a href=""><div class="item clickable"><div class="imgWrapper"><img src="/assets/images/livingRoom.png" alt=""></div><p>Living</p></div></a>
-        <a href=""><div class="item clickable"><div class="imgWrapper"><img src="/assets/images/bedRoom.png" alt=""></div><p>Bedroom</p></div></a>
+        <a href="">
+            <div class="item clickable">
+                <div class="imgWrapper"><img src="/assets/images/diningRoom.png" alt=""></div>
+                <p>Dining</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="item clickable">
+                <div class="imgWrapper"><img src="/assets/images/livingRoom.png" alt=""></div>
+                <p>Living</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="item clickable">
+                <div class="imgWrapper"><img src="/assets/images/bedRoom.png" alt=""></div>
+                <p>Bedroom</p>
+            </div>
+        </a>
     </div>
 </section>
 <section class="row productList">
     <h1 class="title1">Our Products</h1>
     <app-product-list [quantity]=8 [data]=this.data></app-product-list>
     <div class="button clickable">Show More</div>
+</section>
+<section class="row inspiration">
+    <div class="titleSide">
+        <h1 class="title1">
+            50+ Beautiful rooms <br/>
+            inspiration
+        </h1>
+        <p class="subtitle">
+            Our designer already made a lot of beautiful prototipe of rooms that inspire you
+        </p>
+        <div class="button clickable">
+            Explore More
+        </div>
+    </div>
+    <div class="slider">
+        <app-home-slider [slides]=this.slides>
+        </app-home-slider>
+    </div>
 </section>

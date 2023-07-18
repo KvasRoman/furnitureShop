@@ -1,11 +1,12 @@
 import { Observable, delay, of } from "rxjs";
 import ProductCard from "../models/productCard.model";
+import homePageSlide from "../models/homePageSlide.model";
 
-class FakeDB{
+class FakeDB {
     constructor() {
-        
+
     }
-    public GetProductCardInfos(): Observable<ProductCard[]>{
+    public GetProductCardInfos(): Observable<ProductCard[]> {
         return of(
             [
                 new ProductCard("Syltherine", "Stylish cafe chair", 2500000, "/assets/images/fakeDBImages/image 1.png", false, false, null, null),
@@ -17,7 +18,58 @@ class FakeDB{
                 new ProductCard("Syltherine", "Stylish cafe chair", 2500000, "/assets/images/fakeDBImages/image 7.png", false, false, null, null),
                 new ProductCard("Syltherine", "Stylish cafe chair", 2500000, "/assets/images/fakeDBImages/image 8.png", false, false, null, null),
             ]
-        ).pipe(delay(2000));
+        ).pipe(delay(1000));
+    }
+    public GetHomePageSlides(): Observable<homePageSlide[]> {
+        return of(
+            [
+                new homePageSlide(
+                    {
+                        imageUrl: '/assets/images/fakeDBImages/homeSlider/Rectangle 25.png',
+                        link: undefined
+                    },
+                    {
+                        imageUrl: '/assets/images/fakeDBImages/homeSlider/S Rectangle 24.png',
+                        roomType: 'Bed Room',
+                        title: 'Inner Peace',
+                        link: undefined,
+                    }),
+                new homePageSlide(
+                    {
+                        imageUrl: '/assets/images/fakeDBImages/homeSlider/Rectangle 25.png',
+                        link: undefined
+                    },
+                    {
+                        imageUrl: '/assets/images/fakeDBImages/homeSlider/S Rectangle 24.png',
+                        roomType: 'Bed Room',
+                        title: 'Inner Peace',
+                        link: undefined,
+                    }),
+                new homePageSlide(
+                    {
+                        imageUrl: '/assets/images/fakeDBImages/homeSlider/Rectangle 25.png',
+                        link: undefined
+                    },
+                    {
+                        imageUrl: '/assets/images/fakeDBImages/homeSlider/S Rectangle 24.png',
+                        roomType: 'Bed Room',
+                        title: 'Inner Peace',
+                        link: undefined,
+                    }),
+                new homePageSlide(
+                    {
+                        imageUrl: '/assets/images/fakeDBImages/homeSlider/Rectangle 25.png',
+                        link: undefined
+                    },
+                    {
+                        imageUrl: '/assets/images/fakeDBImages/homeSlider/S Rectangle 24.png',
+                        roomType: 'Bed Room',
+                        title: 'Inner Peace',
+                        link: undefined,
+                    })
+
+            ]
+        ).pipe(delay(1000))
     }
 }
 
