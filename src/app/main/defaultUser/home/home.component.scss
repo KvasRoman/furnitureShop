@@ -5,7 +5,7 @@ $secondaryGray: #3A3A3A;
 $gray-2: #616161;
 $transitionDuration: 0.3s;
 
-.row {
+section.row {
 
 
     &.discover {
@@ -156,6 +156,7 @@ $transitionDuration: 0.3s;
         align-items: center;
         justify-content: center;
         margin-top: 113px;
+
         .titleSide {
             width: 422px;
             margin-right: 42px;
@@ -187,6 +188,49 @@ $transitionDuration: 0.3s;
         }
     }
 
+    &.hashtag {
+        margin-top: 111px;
+        .subtitle {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            color: $gray-2;
+            text-align: center;
+            margin: 0px;
+        }
+        .title1{
+            margin: 0;
+            margin-bottom: -20px;
+        }
+        .collage{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            >.row{
+                align-items: center;
+                margin: 0;
+            }
+            .row{
+                display: flex;
+                flex-direction: row;
+                &.top{
+                    align-items: flex-end;
+                }
+                &.bottom{
+                    align-items: flex-start;
+                }
+            }
+            .col{
+                display: flex;
+                flex-direction: column;
+            }
+            img{
+                object-fit: cover;
+                margin: 8px;
+            }
+        }
+    }
+   
     .title1 {
         font-family: Poppins-Bold;
         font-size: 40px;
