@@ -10,6 +10,7 @@ import { HomeComponent } from './main/defaultUser/home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { NumberWithCommasPipe } from './pipes/numberWithCommas.pipe';
 import { HomeSilderComponent } from './main/defaultUser/home/home-slider/home-slider.component';
+import { ShopComponent } from './main/defaultUser/shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,16 @@ import { HomeSilderComponent } from './main/defaultUser/home/home-slider/home-sl
     HomeComponent,
     ProductListComponent,
     NumberWithCommasPipe,
-    HomeSilderComponent
+    HomeSilderComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

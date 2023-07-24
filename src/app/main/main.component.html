@@ -1,5 +1,5 @@
 <main>
-    <div class="row crumbBox" *ngIf="false">
+    <div class="row crumbBox" *ngIf="crumbBarType == enums.crumbBarTypes.big">
         <span class="logoIcon"></span>
         <p class="title">Product Comparison</p>
         <nav class="crumbs">
@@ -10,7 +10,7 @@
             </ol>
         </nav>
     </div>
-    <div class="row smallCrumbBox " *ngIf="false">
+    <div class="row smallCrumbBox " *ngIf="crumbBarType == enums.crumbBarTypes.small">
         <nav class="crumbs">
             <ol>
                 <li class="crumb"><a href="#">Bikes</a> <i class="arrowIcon right"></i></li>
