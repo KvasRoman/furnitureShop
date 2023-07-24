@@ -20,4 +20,34 @@
         </nav>
     </div>
     <router-outlet></router-outlet>
+    <div class="row warranty" *ngIf="warrantyBar">
+        <div class="item">
+            <i class="icon tropyIcon"></i>
+            <div class="text">
+                <p class="title">High Quality</p>
+                <p class="subtitle">crafted from top materials</p>
+            </div>
+        </div>
+        <div class="item">
+            <i class="icon shippingIcon"></i>
+            <div class="text">
+                <p class="title">Warranty Protection</p>
+                <p class="subtitle">Over 2 years</p>
+            </div>
+        </div>
+        <div class="item">
+            <i class="icon guaranteeIcon"></i>
+            <div class="text">
+                <p class="title">Free Shipping</p>
+                <p class="subtitle">Order over 150 $</p>
+            </div>
+        </div>
+        <div class="item">
+            <i class="icon customerSupportIcon"></i>
+            <div class="text">
+                <p class="title">24 / 7 Support</p>
+                <p class="subtitle">Dedicated support</p>
+            </div>
+        </div>
+    </div>
 </main>

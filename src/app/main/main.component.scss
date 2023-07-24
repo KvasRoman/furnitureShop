@@ -1,9 +1,11 @@
 :host {
     flex: 1;
 }
+
 $creamy: #F9F1E7;
-$black: black;
+$black: #242424;
 $gray: #9F9F9F;
+$gray-3: #898989;
 
 
 
@@ -60,6 +62,7 @@ $gray: #9F9F9F;
             a {
                 color: $black;
             }
+
             .arrowIcon {
                 margin-left: 6px;
                 margin-right: 6px;
@@ -72,13 +75,15 @@ $gray: #9F9F9F;
     }
 
 }
-.smallCrumbBox{
+
+.smallCrumbBox {
     background-color: $creamy;
     height: 100px;
     padding-left: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
+
     nav.crumbs {
         padding: 0px;
         list-style-type: none;
@@ -98,6 +103,7 @@ $gray: #9F9F9F;
                 font-weight: 300;
                 border-left: 2px solid $gray;
                 padding-left: 34px;
+
                 &::after {
                     content: '';
                     margin-right: 0px;
@@ -107,6 +113,7 @@ $gray: #9F9F9F;
             a {
                 color: $gray;
             }
+
             .arrowIcon {
                 margin-left: 14px;
                 margin-right: 24px;
@@ -116,5 +123,48 @@ $gray: #9F9F9F;
             }
         }
 
+    }
+}
+
+.warranty {
+    background-color: #FAF3EA;
+    height: 270px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .item {
+        margin-left: 55px;
+        display: flex;
+        flex-direction: row;
+        &:first-child {
+            margin-right: 0px;
+        }
+
+        .icon {
+            display: block;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+            background-color: $black;
+        }
+
+        .text {
+            .title {
+                font-size: 25px;
+                font-style: normal;
+                font-weight: 600;
+                margin: 0px;
+            }
+
+            .subtitle {
+                color: $gray-3;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                margin: 0px;
+            }
+        }
     }
 }

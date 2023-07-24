@@ -13,6 +13,7 @@ export class MainComponent implements OnInit, OnDestroy {
     crumbBarTypes: crumbBarTypes
   }
   crumbBarType: crumbBarTypes = this.enums.crumbBarTypes.none;
+  warrantyBar: boolean = false;
   stateSubscribtion: Subscription | undefined;
   constructor(private userStateService: UserStateService) {
 
@@ -21,6 +22,7 @@ export class MainComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.stateSubscribtion = this.userStateService.subscribeMain((value) => {
       this.crumbBarType = value.crumbBar;
+      this.warrantyBar = value.warrantyBar;
     })
   }
   ngOnDestroy(): void {

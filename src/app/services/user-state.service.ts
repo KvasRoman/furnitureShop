@@ -12,15 +12,7 @@ export interface UserStateReciver {
     providedIn: 'root',
 })
 export class UserStateService implements UserStateReciver {
-    private removeUndefinedFields<T>(obj: T): Partial<T> {
-        const result: any = {};
-        for (const key in obj) {
-            if (Object.prototype.hasOwnProperty.call(obj, key) && obj[key] !== undefined) {
-                result[key] = obj[key];
-            }
-        }
-        return result;
-    }
+
     
     private main: BehaviorSubject<ComponentStateMain> = new BehaviorSubject(
         new ComponentStateMain()
@@ -30,11 +22,12 @@ export class UserStateService implements UserStateReciver {
     }
     
     updateMain(value: {
-        crumbBar: crumbBarTypes | undefined
+        crumbBar?: crumbBarTypes,
+        warrantyBar?: boolean
     }
     ) {
         const currentState = this.main.getValue();
-        const newState = { ...currentState, ...this.removeUndefinedFields(value) };
+        const newState = { ...currentState, ...value};
         this.main.next(newState);
     }
     subscribeMain(callBack: (value: ComponentStateMain) => void): Subscription {
