@@ -10,9 +10,9 @@ import { UserStateService } from 'src/app/services/user-state.service';
 })
 export class ShopComponent {
     constructor(private userStateService: UserStateService) {
-        
+      this.userStateService.updateMain({crumbBar: crumbBarTypes.big});
     }
     ngOnInit(){
-        this.userStateService.updateMain({crumbBar: crumbBarTypes.big});
+        
     }
 }
