@@ -1,0 +1,61 @@
+<div class="row filter">
+    <div class="leftSide">
+        <div class="actionButtons">
+            <div class="filter">
+                <i class="filteringIcon"></i>
+                Filter
+            </div>
+        </div>
+        <div class="productRange">
+            Showing 1–16 of {{totalResultsNumber | async}} results
+        </div>
+    </div>
+    <div class="rightSide">
+        <div class="input">
+            <div class="label">Show</div>
+            <form>
+                <mat-select (valueChange)="onProductRangeChange()" [(value)]="pRangeSelected" name="productRange"
+                    [ngClass]="{'mat-select': true, 'productRange': true, 'changed': pRangeChanged}">
+                    <mat-option *ngFor="let pRange of productRange" [value]="pRange">
+                        {{pRange}}
+                    </mat-option>
+                </mat-select>
+            </form>
+
+        </div>
+        <div class="input">
+            <div class="label">Short by</div>
+            <mat-select (valueChange)="onOrderByChange()" [(value)]="orderBySelected" name="orderBy"
+                [ngClass]="{'mat-select': true, 'orderBy': true, 'changed': orderByChanged}">
+                <mat-option *ngFor="let ob of orderBy" [value]="ob.value">
+                    {{ob.title}}
+                </mat-option>
+            </mat-select>
+        </div>
+    </div>
+</div>
+<div class="row productlist">
+    <div class="leftSide">
+
+    </div>
+    <div class="rightSide">
+        <app-product-list [data]=data [quantity]=8></app-product-list>
+        <div class="pagination" *ngIf="data | async">
+            <div class="page previous clickable" *ngIf="currentPage !== 1" (click)="changePage(currentPage-1)">
+                Previous
+            </div>
+            <div class="page clickable"
+                *ngFor="let p of currentPage | pagination : totalPageNumber : paginationDisplayRange"
+                [ngClass]="{'active': p == currentPage}" (click)="changePage(p)">
+                {{p}}
+            </div>
+
+
+            <div class="page next clickable" *ngIf="currentPage !== totalPageNumber"
+                (click)="changePage(currentPage+1)">Next</div>
+        </div>
+
+
+    </div>
+
+</div>

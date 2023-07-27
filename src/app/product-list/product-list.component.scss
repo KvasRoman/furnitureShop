@@ -1,7 +1,6 @@
 :host {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 1236px;
+    width: 100%;
 }
 
 $gray: #898989;
@@ -13,12 +12,16 @@ $green-accents: #2EC1AC;
 $primary: #B88E2F;
 
 .productItems {
+    width: 100%;
     display: grid;
-    width: min-content;
-    grid-template-columns: repeat(4, 285px);
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 285px);
     grid-gap: 32px;
 
+    @media screen {}
+
     .productItem {
+
         width: 285px;
         height: 446px;
         position: relative;
@@ -53,6 +56,7 @@ $primary: #B88E2F;
                 display: inline-flex;
                 flex-direction: row;
                 width: 100%;
+
                 .currentPrice {
                     font-size: 20px;
                     font-weight: 600;
@@ -69,7 +73,7 @@ $primary: #B88E2F;
             }
         }
 
-        [class$="Badge"] {
+        .discountBadge, .newBadge{
             position: absolute;
             display: flex;
             justify-content: center;
@@ -136,7 +140,8 @@ $primary: #B88E2F;
                     color: $white;
 
                     margin-left: 20px;
-                    &:first-child{
+
+                    &:first-child {
                         margin-left: 0px;
                     }
                 }

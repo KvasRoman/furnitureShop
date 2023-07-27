@@ -20,6 +20,14 @@ class FakeDB {
             ]
         ).pipe(delay(1000));
     }
+    public GetTotalResultsNumber(): Observable<number>{
+        return of(
+            129
+        )
+        .pipe(
+            delay(1000)
+        )
+    }
     public GetHomePageSlides(): Observable<homePageSlide[]> {
         return of(
             [

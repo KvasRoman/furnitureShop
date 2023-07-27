@@ -29,34 +29,48 @@
 .userIcon {
     @include icon("user.svg")
 }
+
 .compareIcon {
     @include icon("compare.svg")
 }
+
 .shareIcon {
     @include icon("share.svg")
 }
-.boldheartIcon{
+
+.boldheartIcon {
     @include icon("boldheart.svg")
 }
+
 .arrowIcon {
     &.right {
         @include icon("arrow.right.svg");
     }
 
 }
-.dashIcon{
+
+.dashIcon {
     width: 27px;
     height: 2px;
 }
-.tropyIcon{
+
+.tropyIcon {
     @include icon("/warranty/trophy.svg")
 }
-.shippingIcon{
+
+.shippingIcon {
     @include icon("/warranty/shipping.svg")
 }
-.guaranteeIcon{
+
+.guaranteeIcon {
     @include icon("/warranty/guarantee.svg")
 }
-.customerSupportIcon{
+
+.customerSupportIcon {
     @include icon("/warranty/customer-support.svg")
+}
+
+.filteringIcon {
+    @include icon("filtering.svg");
+    
 }

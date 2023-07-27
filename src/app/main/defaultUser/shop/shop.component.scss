@@ -1,0 +1,142 @@
+.filter.row {
+    padding: 0px 100px 0px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: #F9F1E7;
+
+    .leftSide {
+        display: flex;
+        flex-direction: row;
+
+        .actionButtons {
+            margin-right: 34px;
+
+            .filter {
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 37px;
+                padding-right: 30px;
+                border-right: 1px solid black;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+
+                .filteringIcon {
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 12px;
+                }
+
+            }
+
+        }
+
+        .productRange {
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+
+    .rightSide {
+
+        display: flex;
+        flex-direction: row;
+
+        .input {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+
+            .label {
+                margin-right: 17px;
+                white-space: nowrap;
+            }
+
+            input {
+                text-align: center;
+                height: 55px;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                border: none;
+
+                &.displayRange {
+                    width: 55px;
+                }
+
+                &:focus-visible {
+                    outline: none;
+                }
+
+            }
+
+
+
+        }
+    }
+}
+
+.productlist.row {
+    margin-bottom: 85px;
+    .rightSide {
+
+        padding-top: 63px;
+
+        .pagination {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            
+            .pages{
+                position: relative;
+            }
+            .page {
+
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                height: 60px;
+                width: 60px;
+                background-color: #F9F1E7;
+                margin-left: 38px;
+                border-radius: 10px;
+
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                transition-duration: 0.2s;
+                &.active{
+                    background-color: #B88E2F;
+                    color: #FFF;
+                }
+                &:first-child {
+                    margin-left: 0px;
+                }
+                &:hover:not(.active){
+                    background-color: #E3D0AA;
+                }
+                &:active{
+                    transition-duration: 0s;
+                    background-color: #B88E2F;
+                }
+                
+                &.previous,
+                &.next {
+                    width: auto;
+                    padding: 0px 28px 0px 28px;
+                }
+                
+
+            }
+        }
+    }
+}

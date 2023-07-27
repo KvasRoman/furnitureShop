@@ -11,7 +11,10 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { NumberWithCommasPipe } from './pipes/numberWithCommas.pipe';
 import { HomeSilderComponent } from './main/defaultUser/home/home-slider/home-slider.component';
 import { ShopComponent } from './main/defaultUser/shop/shop.component';
-
+import {MatSelectModule} from '@angular/material/select';
+import {FormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PaginationPipe } from './pipes/pagination.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +24,17 @@ import { ShopComponent } from './main/defaultUser/shop/shop.component';
     HomeComponent,
     ProductListComponent,
     NumberWithCommasPipe,
+    PaginationPipe,
     HomeSilderComponent,
     ShopComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSelectModule,
+    FormsModule,
+    BrowserAnimationsModule
+
   ],
   providers: [
     
