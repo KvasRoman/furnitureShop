@@ -113,7 +113,7 @@
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 400;
-                transition-duration: 0.2s;
+                
                 &.active{
                     background-color: #B88E2F;
                     color: #FFF;
@@ -122,6 +122,7 @@
                     margin-left: 0px;
                 }
                 &:hover:not(.active){
+                    transition-duration: 0.2s;
                     background-color: #E3D0AA;
                 }
                 &:active{
