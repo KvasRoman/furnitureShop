@@ -36,10 +36,10 @@
 </div>
 <div class="row productlist">
     <div class="leftSide">
-
+   <!-- add fileter -->
     </div>
     <div class="rightSide">
-        <app-product-list [data]=data [quantity]=8></app-product-list>
+        <app-product-list [data]=data [quantity]=pRangeSelected></app-product-list>
         <div class="pagination" *ngIf="data | async">
             <div class="page previous clickable" *ngIf="currentPage !== 1" (click)="changePage(currentPage-1)">
                 Previous

@@ -15,6 +15,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationPipe } from './pipes/pagination.pipe';
+import { ProductComponent } from './main/defaultUser/product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { PaginationPipe } from './pipes/pagination.pipe';
     NumberWithCommasPipe,
     PaginationPipe,
     HomeSilderComponent,
-    ShopComponent
+    ShopComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

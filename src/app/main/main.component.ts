@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserStateService } from '../services/user-state.service';
 import { crumbBarTypes } from '../services/user-state.models';
-import { Subscription } from 'rxjs';
+import { Subscription, filter } from 'rxjs';
+import { ActivatedRoute, Router, RouterEvent } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -15,8 +16,8 @@ export class MainComponent implements OnInit, OnDestroy {
   crumbBarType: crumbBarTypes = this.enums.crumbBarTypes.none;
   isWarrantyBarActive: boolean = false;
   stateSubscribtion: Subscription | undefined;
-  constructor(private userStateService: UserStateService) {
-
+  constructor(private userStateService: UserStateService, private router: Router) {
+    // add crumb bar update on url change
   }
   
   ngOnInit(): void {

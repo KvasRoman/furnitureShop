@@ -1,5 +1,6 @@
 export default class ProductCard {
     constructor(
+        public id: string,
         public name: string,
         public shortDescription: string,
         public price: number,

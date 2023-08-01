@@ -24,7 +24,7 @@
         </div>
         <div class="discountBadge" *ngIf="i.hasDiscount">- {{ i.discountPercentage }}%</div>
         <div class="newBadge" *ngIf="i.isNew">New</div>
-        <a href="">
+        <a [routerLink]="['/Shop/Product', i.id]">
             <div class="popup clickable">
                 <div class="button clickable">Add to cart</div>
                 <div class="subactions">
