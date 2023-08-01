@@ -191,6 +191,7 @@ section.row {
     &.hashtag {
         margin-top: 111px;
         margin-bottom: 50px;
+
         .subtitle {
             font-size: 20px;
             font-style: normal;
@@ -199,39 +200,47 @@ section.row {
             text-align: center;
             margin: 0px;
         }
-        .title1{
+
+        .title1 {
             margin: 0;
             margin-bottom: -20px;
         }
-        .collage{
+
+        .collage {
             display: flex;
             flex-direction: column;
             align-items: center;
-            >.row{
+            overflow: hidden;
+            >.row {
                 align-items: center;
                 margin: 0;
             }
-            .row{
+
+            .row {
                 display: flex;
                 flex-direction: row;
-                &.top{
+
+                &.top {
                     align-items: flex-end;
                 }
-                &.bottom{
+
+                &.bottom {
                     align-items: flex-start;
                 }
             }
-            .col{
+
+            .col {
                 display: flex;
                 flex-direction: column;
             }
-            img{
+
+            img {
                 object-fit: cover;
                 margin: 8px;
             }
         }
     }
-   
+
     .title1 {
         font-family: Poppins-Bold;
         font-size: 40px;
