@@ -67,15 +67,73 @@
                     <input type="text" value="1">
                     <div class="plus clickable">+</div>
                 </div>
-                <div class="actionButton">
+                <div class="actionButton clickable">
                     Add To Cart
                 </div>
-                <div class="actionButton">
+                <div class="actionButton clickable">
                     <span class="plus">+</span>Compare
                 </div>
             </div>
         </div>
+        <div class="col">
+            <div class="bottomInfo">
+                <ul>
+                    <li><span>SKU</span><span>:</span>
+                        <span>SS001</span>
+                    </li>
+                    <li><span>Category</span><span>:</span>
+                        <span>Sofas</span>
+                    </li>
+                    <li><span>Tags</span><span>:</span>
+                        <span>Sofa, Chair, Home, Shop</span>
+                    </li>
+                    <li><span>Share</span><span>:</span>
+                        <span class="socialMedia">
+                            <i class="facebookIcon"></i>
+                            <i class="linkedinIcon"></i>
+                            <i class="twitterIcon"></i>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
-<div class="row"></div>
-<div class="row"></div>
+<div class="row more">
+    <div class="folderTitles">
+        <h3 class="title clickable active">Description</h3>
+        <h3 class="title clickable">Additional Information</h3>
+        <h3 class="title clickable">Reviews [5]</h3>
+    </div>
+    <div class="folders">
+        <div class="folder description">
+            <div class="text">
+                <p>Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes
+                    the
+                    unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
+                </p>
+                <p>
+                    Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering.
+                    Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted
+                    hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is
+                    both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your
+                    personal preferences while the guitar-influenced leather strap enables easy and stylish travel.
+                </p>
+            </div>
+
+            <div class="images">
+                <div class="imageWrapper"><img src="/assets/images/fakeDBImages/product/more/cloud sofa.png" alt=""></div>
+                <div class="imageWrapper"><img src="/assets/images/fakeDBImages/product/more/cloud sofa.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row related">
+    <h1 class="title">
+        Related Products
+    </h1>
+    <app-product-list [data]="ralatedProducts" [quantity]="4"></app-product-list>
+    <div class="showMore clickable">
+        Show More
+    </div>
+</div>

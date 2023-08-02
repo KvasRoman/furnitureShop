@@ -77,3 +77,12 @@
 .starIcon{
     @include icon("star.svg")
 }
+.facebookIcon{
+    @include icon("/socialMedia/facebook-filled.svg")
+}
+.linkedinIcon{
+    @include icon("/socialMedia/linkedin-filled.svg")
+}
+.twitterIcon{
+    @include icon("/socialMedia/twitter-filled.svg")
+}
