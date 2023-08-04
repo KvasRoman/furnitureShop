@@ -26,7 +26,7 @@
         <div class="newBadge" *ngIf="i.isNew">New</div>
         <a [routerLink]="['/Shop/Product', i.id]">
             <div class="popup clickable">
-                <div class="button clickable">Add to cart</div>
+                <div class="button clickable" (click)="AddProduct($event, i.id)">Add to cart</div>
                 <div class="subactions">
                     <div class="action"><i class="shareIcon"></i>Share</div>
                     <div class="action"><i class="compareIcon"></i>Compare</div>

@@ -86,3 +86,9 @@
 .twitterIcon{
     @include icon("/socialMedia/twitter-filled.svg")
 }
+.cartcloseIcon{
+    @include icon("/cart/close.svg")
+}
+.cartremoveproductIcon{
+    @include icon("/cart/removeProduct.svg")
+}

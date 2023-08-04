@@ -16,6 +16,8 @@ import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationPipe } from './pipes/pagination.pipe';
 import { ProductComponent } from './main/defaultUser/product/product.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CartDialog } from './header/cart-dialog/cart-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,14 +30,16 @@ import { ProductComponent } from './main/defaultUser/product/product.component';
     PaginationPipe,
     HomeSilderComponent,
     ShopComponent,
-    ProductComponent
+    ProductComponent,
+    CartDialog
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatSelectModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
 
   ],
   providers: [
