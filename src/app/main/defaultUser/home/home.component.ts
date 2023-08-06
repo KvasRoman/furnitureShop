@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { fakeDB } from 'src/app/fakeDB/faceDB';
 import homePageSlide from 'src/app/models/homePageSlide.model';
 import ProductCard from 'src/app/models/productCard.model';
-import { ComponentStateMain } from 'src/app/services/user-state.models';
+import { ComponentStateMain } from 'src/app/models/user-state.models';
 import { UserStateService } from 'src/app/services/user-state.service';
 
 @Component({

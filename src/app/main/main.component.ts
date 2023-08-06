@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserStateService } from '../services/user-state.service';
-import { crumbBarTypes } from '../services/user-state.models';
+import { crumbBarTypes } from '../models/user-state.models';
 import { Subscription, filter } from 'rxjs';
 import { ActivatedRoute, Router, RouterEvent } from '@angular/router';
 

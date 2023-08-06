@@ -54,10 +54,10 @@ export class CartService {
     }
     RemoveFromCart(productId: string) {
         const productIndex = this.products.findIndex(v => {
-            v.id = productId
+            return v.id == productId
         })
         if (productIndex > -1)
-            this.products.slice(productIndex, 1);
+            this.products.splice(productIndex, 1);
         this._update()
     }
     ChangeItemQuantity(productId: string, newValue: number) {

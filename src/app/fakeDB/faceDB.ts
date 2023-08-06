@@ -18,7 +18,7 @@ class FakeDB {
                 new ProductCard("c60b1d9f-29b1-4149-906f-ca38e3b9e300", "Syltherine", "Stylish cafe chair", 2500000, "/assets/images/fakeDBImages/image 9.png", false, false, null, null),
                 new ProductCard("82f56cd6-57fa-42c0-9ea6-bd27d56b3daa", "Syltherine", "Stylish cafe chair", 2500000, "/assets/images/fakeDBImages/image 2.png", false, true, 30, 3000000),
                 new ProductCard("b07acad6-e53c-418e-bd84-c45e439ed0ba", "Syltherine", "Stylish cafe chair", 2500000, "/assets/images/fakeDBImages/image 6.png", false, false, null, null),
-                new ProductCard("fcda31b0-65b2-4412-87de-0d3f141d24a3", "Syltherine", "Stylish cafe chair", 2500000, "/assets/images/fakeDBImages/image 3.png", true, false, null, null),
+                new ProductCard("fcda31b0-65b2-4412-87de-0d3f141d24a3", "TTyltherine", "Stylish cafe chair", 2500000, "/assets/images/fakeDBImages/image 3.png", true, false, null, null),
                 new ProductCard("445f375c-41c5-477b-8d60-b8b376a260b6", "Syltherine", "Stylish cafe chair", 2500000, "/assets/images/fakeDBImages/image 7.png", false, false, null, null),
                 new ProductCard("472105ad-e606-4500-8297-7d37c43fb3aa", "Syltherine", "Stylish cafe chair", 2500000, "/assets/images/fakeDBImages/image 2.png", false, true, 30, 3000000),
                 new ProductCard("0d097ff2-8cf1-43b0-ab3a-3510a1052592", "Syltherine", "Stylish cafe chair", 2500000, "/assets/images/fakeDBImages/image 8.png", false, false, null, null),

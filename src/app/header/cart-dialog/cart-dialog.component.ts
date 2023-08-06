@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, Input, Inject } from "@angular/core";
+import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { Observable } from "rxjs";
 import { map, tap } from "rxjs/operators"
 import { fakeDB } from "src/app/fakeDB/faceDB";
@@ -12,34 +13,15 @@ import { CartService } from "src/app/services/cart.service";
 export class CartDialog {
     products: {
         id: string,
-        quantity: number
-    }[];
-    loadedProducts: Observable<{
-        id: string,
         name: string,
         imageURL: string,
         price: number,
         quantity: number
-
-    }[]>;
+      }[] = [];
+    
     subtotal: number = 0;
-    constructor(private cartService: CartService) {
-        this.products = [];
-        cartService.Subscribe(value => {
-            this.products = value;
-        });
-        this.loadedProducts = fakeDB.GetCartProducts(this.products.map(v => v.id)).pipe(map(v =>
-            v.map(product => ({
-                ...product,
-                quantity: this.ensure(this.products.find(v => v.id == product.id)).quantity,
-            }))
-        ), tap(v => {
-            this.subtotal = 0;
-            v.forEach(product => {
-                this.subtotal += product.price
-            })
-        }));
-        
+    constructor(private cartService: CartService, @Inject(MAT_DIALOG_DATA) public data: any) {
+        this.products = data.products;
     }
     private ensure<T>(argument: T | undefined | null, message: string = 'This value was promised to be there.'): T {
         if (argument === undefined || argument === null) {
@@ -49,6 +31,8 @@ export class CartDialog {
     }
     RemoveProduct(productId: string) {
         this.cartService.RemoveFromCart(productId);
+        const index = this.products.findIndex(p => {return p.id === productId})
+        this.products.splice(index, 1);
     }
     Flush() {
         this.cartService.FlushProducts();

@@ -6,7 +6,7 @@
 <mat-dialog-content>
 
   <ul class="productList">
-    <li *ngFor="let product of loadedProducts | async">
+    <li *ngFor="let product of products">
       <div class="imageWrapper">
         <img src="{{product.imageURL}}" alt="">
       </div>
@@ -17,7 +17,7 @@
           <span>X</span>
           <span class="price">$ {{product.price | numberWithCommas}}</span></span>
       </div>
-      <i class="cartremoveproductIcon clickable"></i>
+      <i class="cartremoveproductIcon clickable" (click)="RemoveProduct(product.id)"></i>
 
     </li>
   </ul>

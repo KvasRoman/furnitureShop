@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { fakeDB } from "src/app/fakeDB/faceDB";
 import ProductCard from "src/app/models/productCard.model";
-import { crumbBarTypes } from "src/app/services/user-state.models";
+import { crumbBarTypes } from "src/app/models/user-state.models";
 import { UserStateService } from "src/app/services/user-state.service";
 
 @Component({
