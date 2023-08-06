@@ -22,6 +22,7 @@ export class CartDialog {
     subtotal: number = 0;
     constructor(private cartService: CartService, @Inject(MAT_DIALOG_DATA) public data: any) {
         this.products = data.products;
+        this._updateSubtotal();
     }
     private ensure<T>(argument: T | undefined | null, message: string = 'This value was promised to be there.'): T {
         if (argument === undefined || argument === null) {
@@ -29,10 +30,17 @@ export class CartDialog {
         }
         return argument;
     }
+    private _updateSubtotal(){
+        this.subtotal = 0;
+        this.products.map(prod => {
+            this.subtotal += prod.price * prod.quantity;
+        })
+    }
     RemoveProduct(productId: string) {
         this.cartService.RemoveFromCart(productId);
         const index = this.products.findIndex(p => {return p.id === productId})
         this.products.splice(index, 1);
+        this._updateSubtotal();
     }
     Flush() {
         this.cartService.FlushProducts();
