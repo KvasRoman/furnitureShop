@@ -15,16 +15,21 @@ export class MainComponent implements OnInit, OnDestroy {
   }
   crumbBarType: crumbBarTypes = this.enums.crumbBarTypes.none;
   isWarrantyBarActive: boolean = false;
+  crumbBarContent?: {
+    crumbs: {label: string, link: string}[],
+    lastCrumb: string,
+  };
   stateSubscribtion: Subscription | undefined;
   constructor(private userStateService: UserStateService, private router: Router) {
-    // add crumb bar update on url change
   }
-  
+
   ngOnInit(): void {
     this.stateSubscribtion = this.userStateService.subscribeMain((value) => {
       this.crumbBarType = value.crumbBar;
       this.isWarrantyBarActive = value.warrantyBar;
+      this.crumbBarContent = value.crumbBarContent;
     })
+    
   }
   ngOnDestroy(): void {
     this.stateSubscribtion?.unsubscribe();

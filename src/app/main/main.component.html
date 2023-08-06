@@ -1,21 +1,27 @@
 <main>
     <div class="row crumbBox" *ngIf="crumbBarType == enums.crumbBarTypes.big">
         <span class="logoIcon"></span>
-        <p class="title">Product Comparison</p>
+        <p class="title">{{crumbBarContent?.lastCrumb}}</p>
         <nav class="crumbs">
             <ol>
-                <li class="crumb"><a href="#">Bikes</a> <i class="arrowIcon right"></i></li>
-                <li class="crumb"><a href="#">BMX</a> <i class="arrowIcon right"></i></li>
-                <li class="crumb">Jump Bike 3000</li>
+                <li class="crumb" *ngFor="let crumb of crumbBarContent?.crumbs">
+                    <a [routerLink]="crumb.link">{{crumb.label}}</a>
+                    <i class="arrowIcon right"></i>
+                </li>
+                <!-- <li class="crumb"><a href="#">BMX</a> <i class="arrowIcon right"></i></li> -->
+                <li class="crumb">{{crumbBarContent?.lastCrumb}}</li>
             </ol>
         </nav>
     </div>
     <div class="row smallCrumbBox " *ngIf="crumbBarType == enums.crumbBarTypes.small">
         <nav class="crumbs">
             <ol>
-                <li class="crumb"><a href="#">Bikes</a> <i class="arrowIcon right"></i></li>
-                <li class="crumb"><a href="#">BMX</a> <i class="arrowIcon right"></i></li>
-                <li class="crumb">Jump Bike 3000</li>
+                <li class="crumb clickable" *ngFor="let crumb of crumbBarContent?.crumbs">
+                    <a [routerLink]="crumb.link">{{crumb.label}}</a>
+                    <i class="arrowIcon right"></i>
+                </li>
+                <!-- <li class="crumb"><a href="#">BMX</a> <i class="arrowIcon right"></i></li> -->
+                <li class="crumb">{{crumbBarContent?.lastCrumb}}</li>
             </ol>
         </nav>
     </div>

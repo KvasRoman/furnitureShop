@@ -38,7 +38,9 @@ $gray-3: #898989;
     nav.crumbs {
 
         list-style-type: none;
-
+        ol{
+            padding-left: 0px;
+        }
         .crumb {
 
             font-weight: 600;
@@ -58,7 +60,9 @@ $gray-3: #898989;
                     margin-right: 0px;
                 }
             }
-
+            &.clickable{
+                
+            }
             a {
                 color: $black;
             }

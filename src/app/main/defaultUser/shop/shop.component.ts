@@ -37,7 +37,14 @@ export class ShopComponent {
   constructor(private userStateService: UserStateService) {
     this.userStateService.updateMain({
       crumbBar: crumbBarTypes.big,
-      warrantyBar: true
+      warrantyBar: true,
+      crumbBarContent: {
+        crumbs: [{
+          label: "Home",
+          link: ""
+        }],
+        lastCrumb: 'Shop'
+      }
     });
     this.totalResultsNumber.subscribe((v) => {
       this.totalPageNumber = Math.ceil(v / this.pRangeSelected)

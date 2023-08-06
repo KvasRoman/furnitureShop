@@ -15,7 +15,7 @@ export interface UserStateReciver {
 })
 export class UserStateService implements UserStateReciver {
 
-    
+
     private main: BehaviorSubject<ComponentStateMain> = new BehaviorSubject(
         new ComponentStateMain()
     );
@@ -30,9 +30,9 @@ export class UserStateService implements UserStateReciver {
         const currentState = this.header.getValue();
         let subtotal: number = 0;
         value.cart?.forEach(element => {
-           subtotal += element.price;             
+            subtotal += element.price;
         });
-        const newState = {...currentState, ...value}
+        const newState = { ...currentState, ...value }
         console.log("update header")
         console.log(newState);
         this.header.next(newState);
@@ -43,9 +43,15 @@ export class UserStateService implements UserStateReciver {
     updateMain(value: {
         crumbBar?: crumbBarTypes,
         warrantyBar?: boolean
+        crumbBarContent?: {
+            crumbs: {label: string, link: string}[],
+            lastCrumb: string
+        }
     }
     ) {
+        
         const currentState = this.main.getValue();
+
         const newState = { ...currentState, ...value };
         this.main.next(newState);
     }

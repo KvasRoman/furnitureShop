@@ -29,7 +29,7 @@
       <span class="value">$ {{subtotal | numberWithCommas}}</span>
     </div>
     <div class="actions">
-      <div class="action clickable">Cart</div>
+      <div class="action clickable" [routerLink]="'Cart'" mat-dialog-close>Cart</div>
       <div class="action clickable">Checkout</div>
       <div class="action clickable">Comparison</div>
     </div>

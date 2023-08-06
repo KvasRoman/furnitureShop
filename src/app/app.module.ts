@@ -18,6 +18,7 @@ import { PaginationPipe } from './pipes/pagination.pipe';
 import { ProductComponent } from './main/defaultUser/product/product.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CartDialog } from './header/cart-dialog/cart-dialog.component';
+import { CartComponent } from './main/defaultUser/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { CartDialog } from './header/cart-dialog/cart-dialog.component';
     HomeSilderComponent,
     ShopComponent,
     ProductComponent,
-    CartDialog
+    CartDialog,
+    CartComponent
   ],
   imports: [
     BrowserModule,
