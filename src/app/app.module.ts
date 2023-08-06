@@ -19,6 +19,7 @@ import { ProductComponent } from './main/defaultUser/product/product.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CartDialog } from './header/cart-dialog/cart-dialog.component';
 import { CartComponent } from './main/defaultUser/cart/cart.component';
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { CartComponent } from './main/defaultUser/cart/cart.component';
     MatSelectModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
 
   ],
   providers: [
