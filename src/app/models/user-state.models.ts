@@ -1,4 +1,4 @@
-import CartProduct from "./productCart.model";
+import {CartProduct} from "./productCart.model";
 
 export enum crumbBarTypes {
     big = 'big',

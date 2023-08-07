@@ -1,11 +1,89 @@
-:host{
+:host {
     display: flex;
     justify-content: center;
     padding: 72px 0px 85px 0px;
 }
-.products{
+
+.products {
     margin-right: 30px;
+
+    ::ng-deep {
+
+        .mdc-data-table__cell,
+        .mdc-data-table__header-cell {
+            border: none;
+        }
+
+        .mat-mdc-header-row {
+            background-color: #F9F1E7;
+        }
+
+        .mdc-data-table__content {
+
+            .mdc-data-table__row {
+                &:first-child {
+                    .mat-mdc-cell {
+                        height: 105px;
+                        padding-top: 55px;
+                    }
+                }
+
+                .mat-mdc-cell {
+                    &:first-child {
+                        padding-left: 0px;
+                    }
+                    padding-top: 30px;
+                }
+            }
+
+        }
+
+        .mat-elevation-z8 {
+            box-shadow: none;
+        }
+    }
+
+    .imageWrapper {
+        width: 105px;
+        height: 105px;
+        border-radius: 10px;
+        background: #F9F1E7;
+        overflow: hidden;
+
+        img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .carttrashbinIcon {
+        display: block;
+        width: 28px;
+        height: 28px;
+        background-color: #B88E2F;
+    }
+
+    .quantity {
+        width: 32px;
+        height: 32px;
+        border-radius: 5px;
+        border: 1px solid #9F9F9F;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button{
+            -webkit-appearance: none;
+        }
+    }
+    .centered{
+        text-align: center;
+    }
+    td.col-product, td.col-price{
+        padding-right: 53px;
+    }
 }
+
 .cartTotals {
     width: 243px;
     height: fit-content;
@@ -38,6 +116,7 @@
 
     .subtotal {
         margin-top: 61px;
+
         .value {
             font-size: 16px;
             font-weight: 400;
@@ -47,6 +126,7 @@
 
     .total {
         margin-top: 31px;
+
         .value {
             font-size: 20px;
             font-weight: 500;

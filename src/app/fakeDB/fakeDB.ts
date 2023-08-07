@@ -1,7 +1,7 @@
 import { Observable, delay, of } from "rxjs";
 import ProductCard from "../models/productCard.model";
 import homePageSlide from "../models/homePageSlide.model";
-import CartProduct from "../models/productCart.model";
+import {CartProduct} from "../models/productCart.model";
 
 class FakeDB {
     constructor() {

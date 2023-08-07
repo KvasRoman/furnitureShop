@@ -62,10 +62,13 @@ export class CartService {
     }
     ChangeItemQuantity(productId: string, newValue: number) {
         const product = this.products.find(v => {
-            v.id = productId
+            return v.id == productId
         })
         if (product == undefined)
             throw Error('product was not found in cart')
+        else{
+            product.quantity = newValue;
+        }
         this._update()
     }
     FlushProducts(){

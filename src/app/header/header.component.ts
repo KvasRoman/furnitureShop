@@ -4,7 +4,7 @@ import { CartDialog } from './cart-dialog/cart-dialog.component';
 import { Subscription, tap } from 'rxjs';
 import { UserStateService } from '../services/user-state.service';
 import { CartService } from '../services/cart.service';
-import { fakeDB } from '../fakeDB/faceDB';
+import { fakeDB } from '../fakeDB/fakeDB';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -33,28 +33,30 @@ export class HeaderComponent implements OnDestroy {
   constructor(private cartDialog: MatDialog, private userStateService: UserStateService, private cartService: CartService) {
     this.cartServiceSubscription = cartService.Subscribe(v => {
       this.localStoredProducts = v;
-      this.dbRequestSubscription = fakeDB.GetCartProducts(v.map(el => {return el.id})).subscribe(el => {
+      this.dbRequestSubscription = fakeDB.GetCartProducts(v.map(el => { return el.id })).subscribe(el => {
         userStateService.updateHeader({
           cart: el
         })
       });
-      
+
     })
     this.headerStateSubscription = userStateService.subscribeHeader((value) => {
       const localStoredProducts = this.localStoredProducts;
       this.cartProducts = value.cart.map(v => {
-        return {...v, ...this.ensure(localStoredProducts.find(el => {
-          return el.id === v.id
-        }))}
+        return {
+          ...v, ...this.ensure(localStoredProducts.find(el => {
+            return el.id === v.id
+          }))
+        }
       })
     })
   }
   private ensure<T>(argument: T | undefined | null, message: string = 'This value was promised to be there.'): T {
     if (argument === undefined || argument === null) {
-        throw new TypeError(message);
+      throw new TypeError(message);
     }
     return argument;
-}
+  }
   OpenCartDialog() {
     const config = new MatDialogConfig();
     config.position = {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { ComponentStateHeader, ComponentStateMain, crumbBarTypes } from '../models/user-state.models';
-import CartProduct from '../models/productCart.model';
+import {CartProduct} from '../models/productCart.model';
 import { CartService } from './cart.service';
 
 

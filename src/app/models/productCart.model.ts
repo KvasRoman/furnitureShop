@@ -1,4 +1,4 @@
-export default class CartProduct {
+export class CartProduct {
     constructor(
         public id: string,
         public name: string,

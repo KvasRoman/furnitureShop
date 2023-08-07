@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Observable, last } from "rxjs";
-import { fakeDB } from "src/app/fakeDB/faceDB";
+import { fakeDB } from "src/app/fakeDB/fakeDB";
 import ProductCard from "src/app/models/productCard.model";
 import { crumbBarTypes } from "src/app/models/user-state.models";
 import { UserStateService } from "src/app/services/user-state.service";

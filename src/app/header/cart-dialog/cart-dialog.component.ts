@@ -2,7 +2,7 @@ import { Component, Input, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { Observable } from "rxjs";
 import { map, tap } from "rxjs/operators"
-import { fakeDB } from "src/app/fakeDB/faceDB";
+import { fakeDB } from "src/app/fakeDB/fakeDB";
 import { CartService } from "src/app/services/cart.service";
 
 @Component({

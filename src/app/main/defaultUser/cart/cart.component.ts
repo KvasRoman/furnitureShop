@@ -1,29 +1,55 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy } from "@angular/core";
 import { crumbBarTypes } from "src/app/models/user-state.models";
 import { UserStateService } from "src/app/services/user-state.service";
 import { MatTableModule } from '@angular/material/table';
-const ELEMENT_DATA = [
-    { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-    { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-    { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-    { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-    { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-    { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-    { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-    { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-    { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-    { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-];
+import { CartProduct } from "src/app/models/productCart.model";
+import { Subscription, every } from "rxjs";
+import { CartService } from "src/app/services/cart.service";
+import { fakeDB } from "src/app/fakeDB/fakeDB";
+
 @Component({
     selector: 'app-cart',
     templateUrl: 'cart.component.html',
     styleUrls: ['cart.component.scss', '../../../icons.scss']
 })
-export class CartComponent {
-    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-    dataSource = ELEMENT_DATA;
-    constructor(private userStateService: UserStateService) {
+export class CartComponent implements OnDestroy {
+    displayedColumns: string[] = ['imageURL', 'name', 'price', 'quantity', 'id'];
+    headerStateSubscription: Subscription;
+    cartServiceSubscription: Subscription;
+    dbRequestSubscription: Subscription | undefined;
+    subtotal: number = 0;
+    cartProducts: {
+        id: string,
+        name: string,
+        imageURL: string,
+        price: number,
+        quantity: number
+    }[] = [];
+    localStoredProducts: {
+        id: string,
+        quantity: number
+    }[] = []
+    constructor(private userStateService: UserStateService, private cartService: CartService) {
+        this.cartServiceSubscription = cartService.Subscribe(v => {
+            this.localStoredProducts = v;
+            this.dbRequestSubscription = fakeDB.GetCartProducts(v.map(el => { return el.id })).subscribe(el => {
+                userStateService.updateHeader({
+                    cart: el
+                })
+            });
 
+        })
+        this.headerStateSubscription = userStateService.subscribeHeader((value) => {
+            const localStoredProducts = this.localStoredProducts;
+            this.cartProducts = value.cart.map(v => {
+                return {
+                    ...v, ...this.ensure(localStoredProducts.find(el => {
+                        return el.id === v.id
+                    }))
+                }
+            })
+            this._updateSubtotal();
+        })
         userStateService.updateMain({
             crumbBar: crumbBarTypes.big,
             crumbBarContent: {
@@ -37,4 +63,32 @@ export class CartComponent {
             warrantyBar: true
         })
     }
+    private ensure<T>(argument: T | undefined | null, message: string = 'This value was promised to be there.'): T {
+        if (argument === undefined || argument === null) {
+          throw new TypeError(message);
+        }
+        return argument;
+      }
+      RemoveProduct(productId: string){
+        this.cartService.RemoveFromCart(productId);
+        const index = this.cartProducts.findIndex(p => {return p.id === productId})
+        this.cartProducts.splice(index, 1);
+        this._updateSubtotal();
+      }
+      private _updateSubtotal(){
+        this.subtotal = 0;
+        this.cartProducts.map(prod => {
+            this.subtotal += prod.price * prod.quantity;
+        })
+      }
+      ChangeProductQuantity(value: number, productId: string){
+        let resValue = value <= 99 && value >= 1? value : value > 99 ? 99 : 1;
+        this.cartService.ChangeItemQuantity(productId, resValue);
+      }
+      ngOnDestroy(): void {
+        this.cartServiceSubscription.unsubscribe();
+        this.headerStateSubscription.unsubscribe();
+        this.dbRequestSubscription?.unsubscribe();
+      }
+      
 }
