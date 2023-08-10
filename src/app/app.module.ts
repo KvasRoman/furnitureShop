@@ -20,6 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CartDialog } from './header/cart-dialog/cart-dialog.component';
 import { CartComponent } from './main/defaultUser/cart/cart.component';
 import { MatTableModule } from '@angular/material/table';
+import { CheckoutComponent } from './main/defaultUser/checkout/checkout.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,8 @@ import { MatTableModule } from '@angular/material/table';
     ShopComponent,
     ProductComponent,
     CartDialog,
-    CartComponent
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { MatTableModule } from '@angular/material/table';
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatAutocompleteModule
 
   ],
   providers: [

@@ -1,19 +1,21 @@
-import { Component, OnDestroy } from "@angular/core";
-import { crumbBarTypes } from "src/app/models/user-state.models";
-import { UserStateService } from "src/app/services/user-state.service";
-import { MatTableModule } from '@angular/material/table';
-import { CartProduct } from "src/app/models/productCart.model";
-import { Subscription, every } from "rxjs";
-import { CartService } from "src/app/services/cart.service";
+import { Component } from "@angular/core";
+import { Subscription } from "rxjs";
 import { fakeDB } from "src/app/fakeDB/fakeDB";
+import { crumbBarTypes } from "src/app/models/user-state.models";
+import { CartService } from "src/app/services/cart.service";
+import { UserStateService } from "src/app/services/user-state.service";
+
 
 @Component({
-    selector: 'app-cart',
-    templateUrl: 'cart.component.html',
-    styleUrls: ['cart.component.scss', '../../../icons.scss']
+    selector: 'app-checkout',
+    templateUrl: 'checkout.component.html',
+    styleUrls: ['checkout.component.scss']
 })
-export class CartComponent implements OnDestroy {
-    displayedColumns: string[] = ['imageURL', 'name', 'price', 'quantity', 'id'];
+export class CheckoutComponent {
+
+    countryRegionChanged: boolean = false;
+    countyRegionSelected: number = 1;
+    provinceChanged: boolean = false;
     headerStateSubscription: Subscription;
     cartServiceSubscription: Subscription;
     dbRequestSubscription: Subscription | undefined;
@@ -54,12 +56,8 @@ export class CartComponent implements OnDestroy {
         userStateService.updateMain({
             crumbBar: crumbBarTypes.big,
             crumbBarContent: {
-                crumbs: [{
-                    label: 'Home',
-                    link: ''
-                }],
-                lastCrumb: 'Cart',
-
+                crumbs: [{ label: 'Home', link: '' }],
+                lastCrumb: 'Checkout'
             },
             warrantyBar: true
         })
@@ -70,27 +68,16 @@ export class CartComponent implements OnDestroy {
         }
         return argument;
     }
-    RemoveProduct(productId: string) {
-        const index = this.cartProducts.findIndex(p => { return p.id === productId })
-        this.cartProducts.splice(index, 1);
-        this._updateSubtotal();
-        this.cartService.RemoveFromCart(productId);
-
-    }
     private _updateSubtotal() {
         this.subtotal = 0;
         this.cartProducts.map(prod => {
             this.subtotal += prod.price * prod.quantity;
         })
     }
-    ChangeProductQuantity(value: number, productId: string) {
-        let resValue = value <= 99 && value >= 1 ? value : value > 99 ? 99 : 1;
-        this.cartService.ChangeItemQuantity(productId, resValue);
+    ProvinceChange(){
+        this.provinceChanged = true;
     }
-    ngOnDestroy(): void {
-        this.cartServiceSubscription.unsubscribe();
-        this.headerStateSubscription.unsubscribe();
-        this.dbRequestSubscription?.unsubscribe();
+    CountryRegionChange(){
+        this.countryRegionChanged = true;
     }
-
 }

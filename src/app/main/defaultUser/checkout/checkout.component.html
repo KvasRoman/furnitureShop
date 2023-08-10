@@ -1,0 +1,124 @@
+<div class="billingDetails">
+    <div class="title">Billing details</div>
+    <form action="">
+        <div class="row multipleInputs">
+            <label>
+                First Name
+                <input type="text">
+            </label>
+            <label>
+                Last Name
+                <input type="text">
+            </label>
+        </div>
+        <div class="row"><label>
+                Company Name (Optional)
+                <input type="text">
+            </label></div>
+
+        <div class="row select">
+            <label>
+                Country / Region
+                <mat-select name="countryRegion" (selectionChange)="CountryRegionChange()" [value]="1"
+                    [ngClass]="{'mat-select': true, 'productRange': true, 'changed': countryRegionChanged}">
+
+                    <mat-option [value]="1">
+                        Ukraine
+                    </mat-option>
+
+                </mat-select>
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option [value]="1">
+                        Ukraine
+                    </mat-option>
+                </mat-autocomplete>
+            </label>
+        </div>
+
+        <div class="row"><label>
+                Street address
+                <input type="text">
+            </label></div>
+
+        <div class="row"><label>
+                Town / City
+                <input type="text">
+            </label></div>
+        <div class="row select"><label>
+                Province
+                <mat-select name="province" (selectionChange)="ProvinceChange()"
+                    [ngClass]="{'mat-select': true, 'productRange': true, 'changed': provinceChanged}">
+                    <mat-option [value]="'pRange'">
+                        pRange
+                    </mat-option>
+                </mat-select>
+            </label></div>
+        <div class="row"><label>
+                ZIP code
+                <input type="text">
+            </label></div>
+
+        <div class="row"><label>
+                Phone
+                <input type="text">
+            </label></div>
+
+        <div class="row"><label>
+                Email address
+                <input type="text">
+            </label></div>
+
+        <div class="row"><label>
+                <input type="text" placeholder="Additional information">
+            </label></div>
+
+    </form>
+</div>
+<div class="order">
+    <div class="header spaceBetween">
+        <span>Product</span>
+        <span>Subtotal</span>
+    </div>
+    <div class="product spaceBetween " *ngFor="let product of cartProducts">
+        <span class="align-center"><span class="name">{{product.name}}</span><span class="x">X</span><span
+                class="quantity">{{product.quantity}}</span></span>
+        <span>$ {{product.price | numberWithCommas}}</span>
+    </div>
+    <div class="subtotal spaceBetween">
+        <span class="label">Subtotal</span>
+        <span class="value">$ {{subtotal | numberWithCommas}}</span>
+    </div>
+    <div class="total spaceBetween">
+        <span class="label">Total</span>
+        <span class="value">$ {{subtotal | numberWithCommas}}</span>
+    </div>
+    <div class="paymentType">
+        <div class="radioWrapper">
+            <label class="clickable"><input type="radio" name="payment" checked>Direct Bank Transfer
+            </label>
+            <p class="details">Make your payment directly into our bank account. Please use your Order ID as the payment
+                reference. Your
+                order will not be shipped until the funds have cleared in our account.</p>
+        </div>
+        <div class="radioWrapper">
+            <label class="clickable"><input type="radio" name="payment">Direct Bank Transfer </label>
+            <p class="details">Make your payment directly into our bank account. Please use your Order ID as the payment
+                reference. Your
+                order will not be shipped until the funds have cleared in our account.</p>
+        </div>
+        <div class="radioWrapper">
+            <label class="clickable"><input type="radio" name="payment">Cash On Delivery </label>
+            <p class="details">Make your payment directly into our bank account. Please use your Order ID as the payment
+                reference. Your
+                order will not be shipped until the funds have cleared in our account.</p>
+        </div>
+    </div>
+    <div class="agreement">
+        Your personal data will be used to support your experience throughout this website, to manage access to your
+        account, and for other purposes described in our
+        <b class="clickable">privacy policy</b> .
+    </div>
+    <div class="submit clickable">
+        Place order
+    </div>
+</div>
