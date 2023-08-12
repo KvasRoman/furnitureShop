@@ -1,10 +1,11 @@
 import { Component } from "@angular/core";
-import { Subscription } from "rxjs";
+import { Observable, Subscription } from "rxjs";
 import { fakeDB } from "src/app/fakeDB/fakeDB";
 import { crumbBarTypes } from "src/app/models/user-state.models";
 import { CartService } from "src/app/services/cart.service";
 import { UserStateService } from "src/app/services/user-state.service";
-
+import { HttpClient } from '@angular/common/http';
+import { Configuration } from "src/app/configuration";
 
 @Component({
     selector: 'app-checkout',
@@ -13,6 +14,7 @@ import { UserStateService } from "src/app/services/user-state.service";
 })
 export class CheckoutComponent {
 
+    countryRegions: Observable<{id: number, name: string}[]>;
     countryRegionChanged: boolean = false;
     countyRegionSelected: number = 1;
     provinceChanged: boolean = false;
@@ -32,7 +34,8 @@ export class CheckoutComponent {
         id: string,
         quantity: number
     }[] = []
-    constructor(private userStateService: UserStateService, private cartService: CartService) {
+    constructor(private http: HttpClient, private userStateService: UserStateService, private cartService: CartService) {
+        this.countryRegions = http.get<{id: number, name: string}[]>(Configuration.apiUrl + "/Country");
         this.cartServiceSubscription = cartService.Subscribe(v => {
             this.localStoredProducts = v;
             this.dbRequestSubscription = fakeDB.GetCartProducts(v.map(el => { return el.id })).subscribe(el => {

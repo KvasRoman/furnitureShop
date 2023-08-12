@@ -19,11 +19,11 @@
         <div class="row select">
             <label>
                 Country / Region
-                <mat-select name="countryRegion" (selectionChange)="CountryRegionChange()" [value]="1"
+                <mat-select name="countryRegion" (selectionChange)="CountryRegionChange()"
                     [ngClass]="{'mat-select': true, 'productRange': true, 'changed': countryRegionChanged}">
 
-                    <mat-option [value]="1">
-                        Ukraine
+                    <mat-option *ngFor="let countryR of countryRegions | async" [value]="countryR.id">
+                        {{countryR.name}}
                     </mat-option>
 
                 </mat-select>

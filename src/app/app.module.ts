@@ -22,6 +22,7 @@ import { CartComponent } from './main/defaultUser/cart/cart.component';
 import { MatTableModule } from '@angular/material/table';
 import { CheckoutComponent } from './main/defaultUser/checkout/checkout.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     ProductComponent,
     CartDialog,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +48,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     BrowserAnimationsModule,
     MatDialogModule,
     MatTableModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    HttpClientModule
 
   ],
   providers: [
