@@ -95,3 +95,12 @@
 .carttrashbinIcon{
     @include icon("/cart/trashBin.svg")
 }
+.contactClockIcon{
+    @include icon("/contact/clock.svg")
+}
+.contactPhoneIcon{
+    @include icon("/contact/phone.svg")
+}
+.contactPointIcon{
+    @include icon("/contact/point.svg")
+}

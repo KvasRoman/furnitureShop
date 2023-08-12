@@ -23,6 +23,7 @@ import { MatTableModule } from '@angular/material/table';
 import { CheckoutComponent } from './main/defaultUser/checkout/checkout.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './main/defaultUser/contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     CartDialog,
     CartComponent,
     CheckoutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
