@@ -12,7 +12,7 @@ import { NumberWithCommasPipe } from './pipes/numberWithCommas.pipe';
 import { HomeSilderComponent } from './main/defaultUser/home/home-slider/home-slider.component';
 import { ShopComponent } from './main/defaultUser/shop/shop.component';
 import {MatSelectModule} from '@angular/material/select';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationPipe } from './pipes/pagination.pipe';
 import { ProductComponent } from './main/defaultUser/product/product.component';
@@ -51,7 +51,8 @@ import { ContactComponent } from './main/defaultUser/contact/contact.component';
     MatDialogModule,
     MatTableModule,
     MatAutocompleteModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
   ],
   providers: [

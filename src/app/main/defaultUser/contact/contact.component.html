@@ -28,26 +28,38 @@
         </div>
     </div>
     <div class="rightSide">
-        <form action="">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <div class="row"><label>
                     Your name
-                    <input type="text" placeholder="Abc">
-                </label></div>
+                    <input type="text" placeholder="Abc" formControlName="name">
+                </label>
+                <div class="error" *ngIf="contactForm.get('name')?.hasError('required')">
+                    Name field should consist of at
+                    least 3 letters
+                </div>
+
+            </div>
             <div class="row"><label>
                     Email address
-                    <input type="text" placeholder="Abc@def.com">
-                </label></div>
+                    <input type="text" placeholder="Abc@def.com" formControlName="email">
+                </label>
+                <div class="error" *ngIf="contactForm.get('email')?.hasError('required')">email is required</div>
+                <div class="error" *ngIf="contactForm.get('email')?.hasError('email')">Invalid email format</div>
+            </div>
             <div class="row"><label>
                     Subject
-                    <input type="text" placeholder="This is an optional">
+                    <input type="text" placeholder="This is an optional" formControlName="subject">
                 </label></div>
             <div class="row"><label>
                     Message
-                    <textarea name="Text1" cols="40" rows="5" placeholder="Hi! i’d like to ask about"></textarea>
-                </label></div>
-            <div class="submit">
-                Submit
+                    <textarea name="Text1" cols="40" rows="5" placeholder="Hi! i’d like to ask about"
+                        formControlName="message"></textarea>
+                </label>
+                <div class="error" *ngIf="contactForm.get('message')?.hasError('required')">Message should not be empty</div>
             </div>
+            <button type="submit" class="submit">
+                Submit
+            </button>
         </form>
     </div>
 </div>
