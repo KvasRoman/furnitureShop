@@ -33,7 +33,7 @@ export class ContactComponent implements OnInit {
         })
     }
     ngOnInit(): void {
-       this.snackBarService.logError("log");
+        this.snackBarService.logSuccess("done");
     }
     onSubmit() {
         console.log(this.contactForm.value);
