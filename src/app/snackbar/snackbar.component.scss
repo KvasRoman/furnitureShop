@@ -1,0 +1,61 @@
+:host{
+}
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: black;
+    .leftSide{
+        display: inline-flex;
+        align-items: center;
+    }
+    .icon{
+        &.logoIcon{
+            display: block;
+            width: 50px;
+            height: 32px;
+            background-color: black;
+            margin-right: 15px;
+    
+    
+        }
+    }
+    p{
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .close{
+        background-color: transparent;
+        outline: none;
+        border: none;
+
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    &.error{
+        color: rgb(240, 112, 106);
+        .icon{
+            background-color: rgb(240, 112, 106);
+        }
+    }
+    &.success{
+        color: #88D453;
+        .icon{
+            background-color: #88D453;
+        }
+    }
+}
+
+::ng-deep{
+    .snackbar{
+        --mdc-snackbar-container-color: #F9F1E7;
+        margin-bottom: 20px;
+        .mdc-snackbar__surface{
+            border-radius: 0px;
+        }
+    }
+}

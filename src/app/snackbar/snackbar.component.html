@@ -1,0 +1,7 @@
+<div class="wrapper {{data?.type}}">
+  <div class="leftSide">
+    <i class="icon logoIcon"></i>
+    <p>{{data?.message}}</p>
+  </div>
+  <button class="close clickable" mat-button matSnackBarAction (click)="snackBarRef.dismissWithAction()">Close</button>
+</div>

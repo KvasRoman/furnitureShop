@@ -11,8 +11,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { NumberWithCommasPipe } from './pipes/numberWithCommas.pipe';
 import { HomeSilderComponent } from './main/defaultUser/home/home-slider/home-slider.component';
 import { ShopComponent } from './main/defaultUser/shop/shop.component';
-import {MatSelectModule} from '@angular/material/select';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationPipe } from './pipes/pagination.pipe';
 import { ProductComponent } from './main/defaultUser/product/product.component';
@@ -21,9 +21,10 @@ import { CartDialog } from './header/cart-dialog/cart-dialog.component';
 import { CartComponent } from './main/defaultUser/cart/cart.component';
 import { MatTableModule } from '@angular/material/table';
 import { CheckoutComponent } from './main/defaultUser/checkout/checkout.component';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './main/defaultUser/contact/contact.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,11 +53,12 @@ import { ContactComponent } from './main/defaultUser/contact/contact.component';
     MatTableModule,
     MatAutocompleteModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
 
   ],
   providers: [
-    
+
   ],
   bootstrap: [AppComponent]
 })

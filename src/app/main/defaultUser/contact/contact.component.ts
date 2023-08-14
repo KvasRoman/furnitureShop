@@ -1,19 +1,22 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Component, KeyValueDiffers } from "@angular/core";
+import { Component, KeyValueDiffers, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { MatSnackBar } from "@angular/material/snack-bar";
 import { Configuration } from "src/app/configuration";
 import { crumbBarTypes } from "src/app/models/user-state.models";
+import { SnackBarService } from "src/app/services/snackbar.service";
 import { UserStateService } from "src/app/services/user-state.service";
+import { SnackBarComponent } from "src/app/snackbar/snackbar.component";
 
 @Component({
     selector: 'app-contact',
     templateUrl: 'contact.component.html',
     styleUrls: ['contact.component.scss', '../../../icons.scss']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
     contactForm: FormGroup;
 
-    constructor(private userStateService: UserStateService, private fb: FormBuilder, private http: HttpClient) {
+    constructor(private userStateService: UserStateService, private fb: FormBuilder, private http: HttpClient, private snackBarService: SnackBarService) {
         this.contactForm = fb.group({
             name: ['', [Validators.required, Validators.minLength(3)]],
             email: ['', [Validators.required, Validators.email]],
@@ -29,6 +32,9 @@ export class ContactComponent {
             warrantyBar: true
         })
     }
+    ngOnInit(): void {
+       this.snackBarService.logError("log");
+    }
     onSubmit() {
         console.log(this.contactForm.value);
         if (this.contactForm.valid) {
@@ -40,12 +46,14 @@ export class ContactComponent {
                 Subject: this.contactForm.value.subject,
                 Message: this.contactForm.value.message
             })
-            .subscribe((response) => {
-                console.log('OK');
-            },
-            (error) => {
-                console.log(error);
-            });
+                .subscribe(
+                    (response) => {
+                        this.snackBarService.logSuccess("Hooray")
+                    },
+                    (error) => {
+                        console.log(error);
+                        this.snackBarService.logError("oops something went wrong");
+                    });
         }
 
     }
