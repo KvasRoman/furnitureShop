@@ -17,11 +17,9 @@
             <p class="price">Rs. 250,000.00</p>
             <div class="review">
                 <div class="stars">
-                    <i class="star starIcon"></i>
-                    <i class="star starIcon"></i>
-                    <i class="star starIcon"></i>
-                    <i class="star starIcon"></i>
-                    <i class="star starIcon"></i>
+                    <i *ngFor="let i of [1,2,3,4,5]" [ngClass]="{'full': i < rating && rating - i >= 0,
+                         'half': rating - (i-1) < 1 && rating - (i-1) > 0}" class="star starIcon">
+                    </i>
                 </div>
                 <div class="reviewCouter">
                     5 Customer Review
@@ -122,8 +120,10 @@
             </div>
 
             <div class="images">
-                <div class="imageWrapper"><img src="/assets/images/fakeDBImages/product/more/cloud sofa.png" alt=""></div>
-                <div class="imageWrapper"><img src="/assets/images/fakeDBImages/product/more/cloud sofa.png" alt=""></div>
+                <div class="imageWrapper"><img src="/assets/images/fakeDBImages/product/more/cloud sofa.png" alt="">
+                </div>
+                <div class="imageWrapper"><img src="/assets/images/fakeDBImages/product/more/cloud sofa.png" alt="">
+                </div>
             </div>
         </div>
     </div>

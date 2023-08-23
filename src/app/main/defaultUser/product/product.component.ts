@@ -14,7 +14,7 @@ import { UserStateService } from "src/app/services/user-state.service";
 export class ProductComponent implements OnInit, OnDestroy {
 
     ralatedProducts: Observable<ProductCard[]> = fakeDB.GetProductCardInfos();
-
+    rating : number = 4.2;
     
     constructor(userStateService: UserStateService, private activatedRoute: ActivatedRoute) {
         

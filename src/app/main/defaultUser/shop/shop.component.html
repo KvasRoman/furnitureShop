@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="productRange">
-            Showing 1–16 of {{totalResultsNumber | async}} results
+            Showing 1–16 of {{toPageNumber(totalPageNumber)}} results
         </div>
     </div>
     <div class="rightSide">
@@ -39,8 +39,8 @@
    <!-- add fileter -->
     </div>
     <div class="rightSide">
-        <app-product-list [data]=data [quantity]=pRangeSelected></app-product-list>
-        <div class="pagination" *ngIf="data | async">
+        <app-product-list *ngIf="$data" [data]=$data [quantity]=pRangeSelected></app-product-list>
+        <div class="pagination" *ngIf="$data | async">
             <div class="page previous clickable" *ngIf="currentPage !== 1" (click)="changePage(currentPage-1)">
                 Previous
             </div>

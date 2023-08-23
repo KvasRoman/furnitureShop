@@ -98,7 +98,12 @@ $primary: #B88E2F;
                         display: block;
                         width: 20px;
                         height: 20px;
-                        background-color: #FFC700;
+                        &.full{
+                            background-color: #FFC700;    
+                        }
+                        &.half{
+                            background: linear-gradient(to right, #FFC700 50%, white 50.001%);
+                        }
                         margin-left: 6px;
 
                         &:first-child {

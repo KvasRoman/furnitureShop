@@ -8,7 +8,7 @@
                 {{i.name}}
             </div>
             <div class="shortDescription">
-                {{i.shortDescription}}
+                {{i.briefDescription}}
             </div>
             <div class="price">
                 <span class="currentPrice" *ngIf="i.hasDiscount">
@@ -22,7 +22,7 @@
                 </span>
             </div>
         </div>
-        <div class="discountBadge" *ngIf="i.hasDiscount">- {{ i.discountPercentage }}%</div>
+        <div class="discountBadge" *ngIf="i.discountPercentage != 0">- {{ i.discountPercentage }}%</div>
         <div class="newBadge" *ngIf="i.isNew">New</div>
         <a [routerLink]="['/Shop/Product', i.id]">
             <div class="popup clickable">

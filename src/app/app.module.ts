@@ -25,6 +25,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './main/defaultUser/contact/contact.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ProductComparisonComponent } from './main/defaultUser/product-comparison/product-comparison.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     CartDialog,
     CartComponent,
     CheckoutComponent,
-    ContactComponent
+    ContactComponent,
+    ProductComparisonComponent
   ],
   imports: [
     BrowserModule,

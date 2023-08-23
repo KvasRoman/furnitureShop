@@ -2,7 +2,7 @@ export default class ProductCard {
     constructor(
         public id: string,
         public name: string,
-        public shortDescription: string,
+        public briefDescription: string,
         public price: number,
         public imageUrl: string,
         public isNew: boolean = false,

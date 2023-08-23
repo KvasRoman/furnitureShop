@@ -6,6 +6,7 @@ import { ProductComponent } from './main/defaultUser/product/product.component';
 import { CartComponent } from './main/defaultUser/cart/cart.component';
 import { CheckoutComponent } from './main/defaultUser/checkout/checkout.component';
 import { ContactComponent } from './main/defaultUser/contact/contact.component';
+import { ProductComparisonComponent } from './main/defaultUser/product-comparison/product-comparison.component';
 
 const routes: Routes = [
   {path: 'Shop/Product/:id', component: ProductComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'Cart', component: CartComponent},
   {path: 'Contact', component: ContactComponent},
   {path: 'Checkout', component: CheckoutComponent},
+  {path: 'ProductComparison', component: ProductComparisonComponent},
   {path: '', component: HomeComponent}
 ];
 
