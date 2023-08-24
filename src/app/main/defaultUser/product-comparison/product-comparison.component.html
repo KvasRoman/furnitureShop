@@ -1,0 +1,91 @@
+<div class="col">
+    <div class="wrapper">
+    <div class="row header">
+        <div class="goTo">
+            <span class="title">
+                Go to Product page for more
+                Products
+            </span>
+            <span class="link clickable">
+                View More
+            </span>
+        </div>
+        <div class="productHeaders">
+            <div class="header">
+                <img src="" alt="">
+                <div class="name">Asgaard Sofa</div>
+                <div class="price">Rs. 250,000.00</div>
+                <div class="rating">
+                    <span class="value">
+                        4.7
+                    </span>
+                    <div class="stars">
+                        <i *ngFor="let i of [1,2,3,4,5]" [ngClass]="{'full': i < rating && rating - i >= 0,
+                            'half': rating - (i-1) < 1 && rating - (i-1) > 0}" class="star starIcon">
+                        </i>
+                    </div>
+                    <span class="reviews">
+                        204 Review
+                    </span>
+                </div>
+            </div>
+            <div class="header">
+                <img src="" alt="">
+                <div class="name">Asgaard Sofa</div>
+                <div class="price">Rs. 250,000.00</div>
+                <div class="rating">
+                    <span class="value">
+                        4.7
+                    </span>
+                    <div class="stars">
+                        <i *ngFor="let i of [1,2,3,4,5]" [ngClass]="{'full': i < rating && rating - i >= 0,
+                            'half': rating - (i-1) < 1 && rating - (i-1) > 0}" class="star starIcon">
+                        </i>
+                    </div>
+                    <span class="reviews">
+                        204 Review
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="addProduct">
+            <div class="title">
+                Add A Product
+            </div>
+            <div class="select">
+                <mat-select name="orderBy" [ngClass]="{'mat-select': true, 'orderBy': true}"
+                    placeholder="Choose a Product">
+                    <mat-option [value]="1">
+                        {{1}}
+                    </mat-option>
+                </mat-select>
+            </div>
+        </div>
+    </div>
+    <div class="row properties">
+        <div class="tableWrapper">
+            <table mat-table [dataSource]="displayData" class="mat-elevation-z0" fixedLayout="true">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+                <!-- Position Column -->
+                <ng-container [matColumnDef]="column" *ngFor="let column of displayColumns; let i = index">
+                    <th mat-header-cell *matHeaderCellDef> </th>
+                    <td mat-cell *matCellDef="let element"
+                        [ngClass]="{'section': i == 0 && isSection(element[column])}">
+                        <span class="text">
+                            {{ i == 0 && isSection(element[column]) ? (element[column] | section) : element[column] }}
+                        </span>
+                        
+                    </td>
+
+                </ng-container>
+
+                <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+</div>

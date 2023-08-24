@@ -26,6 +26,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './main/defaultUser/contact/contact.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ProductComparisonComponent } from './main/defaultUser/product-comparison/product-comparison.component';
+import { ComparisonSectionPipe } from './pipes/comparisonSection.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { ProductComparisonComponent } from './main/defaultUser/product-compariso
     CartComponent,
     CheckoutComponent,
     ContactComponent,
-    ProductComparisonComponent
+    ProductComparisonComponent,
+    ComparisonSectionPipe
   ],
   imports: [
     BrowserModule,
