@@ -1,40 +1,42 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-
-    overflow-x: scroll;
-}
+:host {}
 
 .col {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 34px 96px 112px 96px;
+    padding: 34px 96px 0 96px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: scroll;
+    .align-wrapper{
+        display: flex;
+        align-items: center;
+        
+    }
+    .wrapper {}
 }
 
 .row {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
 
-    .wrapper {
-    }
+    box-sizing: border-box;
+
+
 
     &.header {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        box-sizing: border-box;
 
         .goTo {
             padding-top: 24px;
             width: 223px;
+            min-width: 223px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
             margin-right: 75px;
+
+            box-sizing: border-box;
 
             .title {
                 font-size: 28px;
@@ -139,7 +141,9 @@
         }
 
         .addProduct {
-            padding: 39px 0px 0px 40px;
+            padding: 39px 125px 0px 40px;
+
+            box-sizing: border-box;
 
             .title {
                 font-size: 24px;

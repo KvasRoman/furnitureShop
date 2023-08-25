@@ -8,7 +8,7 @@ var data = [
     {
         general: {
             salesPackage: '1 sectional sofa',
-            modelNumber: 'TFCBLIGRBL6SRHS2',
+            modelNumber: 'TFCBLIGRBL6SRH1S2232',
             secondaryMaterial: 'Solid Wood',
             configuration: 'L-shaped',
             upholsteryMaterial: 'Fabric + Cotton',
@@ -41,7 +41,7 @@ var data = [
     {
         general: {
             salesPackage: '1 sectional sofa',
-            modelNumber: 'TFCBLIGRBL6SRHS22',
+            modelNumber: 'TFCBLIGRBL6SRHS12223',
             secondaryMaterial: 'Solid Wood',
             configuration: 'L-shaped',
             upholsteryMaterial: 'Fabric + Cotton',
@@ -74,7 +74,7 @@ var data = [
     {
         general: {
             salesPackage: '1 sectional sofa',
-            modelNumber: 'TFCBLIGRBL6SRHS223',
+            modelNumber: 'TFCBLIGRBL6SRHS2232',
             secondaryMaterial: 'Solid Wood',
             configuration: 'L-shaped',
             upholsteryMaterial: 'Fabric + Cotton',
@@ -103,10 +103,44 @@ var data = [
             domesticWarranty: '1 Year'
         }
 
-    },{
+    },
+    {
         general: {
             salesPackage: '1 sectional sofa',
-            modelNumber: 'TFCBLIGRBL6SRHS222',
+            modelNumber: 'TFCBLIGRBL6SRHS2223',
+            secondaryMaterial: 'Solid Wood',
+            configuration: 'L-shaped',
+            upholsteryMaterial: 'Fabric + Cotton',
+            upholsteryColor: 'Bright Grey & Lion',
+        },
+        product: {
+            fillingMaterial: 'Foam',
+            finishType: 'Bright Grey & Lion',
+            adjustableHeadrest: 'No',
+            maximumLoadCapacity: '280 KG',
+            originOfManufacture: 'India'
+        },
+        dimensions: {
+            width: '265.32 cm',
+            height: '76 cm',
+            depth: '167.76 cm',
+            weight: '45 KG',
+            seatHeight: '41.52 cm',
+            legHeight: '5.46 cm'
+        },
+        waranty: {
+            warrantySummary: '1 Year Manufacturing Warranty',
+            warrantyServiceType: 'For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com',
+            coveredInWarranty: 'Warranty Against Manufacturing Defect',
+            notCoveredInWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
+            domesticWarranty: '1 Year'
+        }
+
+    },
+    {
+        general: {
+            salesPackage: '1 sectional sofa',
+            modelNumber: 'TFCBLIGRBL6SRHS2224',
             secondaryMaterial: 'Solid Wood',
             configuration: 'L-shaped',
             upholsteryMaterial: 'Fabric + Cotton',
