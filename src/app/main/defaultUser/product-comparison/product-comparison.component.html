@@ -47,6 +47,60 @@
                     </span>
                 </div>
             </div>
+            <div class="header">
+                <img src="" alt="">
+                <div class="name">Asgaard Sofa</div>
+                <div class="price">Rs. 250,000.00</div>
+                <div class="rating">
+                    <span class="value">
+                        4.7
+                    </span>
+                    <div class="stars">
+                        <i *ngFor="let i of [1,2,3,4,5]" [ngClass]="{'full': i < rating && rating - i >= 0,
+                            'half': rating - (i-1) < 1 && rating - (i-1) > 0}" class="star starIcon">
+                        </i>
+                    </div>
+                    <span class="reviews">
+                        204 Review
+                    </span>
+                </div>
+            </div>
+            <div class="header">
+                <img src="" alt="">
+                <div class="name">Asgaard Sofa</div>
+                <div class="price">Rs. 250,000.00</div>
+                <div class="rating">
+                    <span class="value">
+                        4.7
+                    </span>
+                    <div class="stars">
+                        <i *ngFor="let i of [1,2,3,4,5]" [ngClass]="{'full': i < rating && rating - i >= 0,
+                            'half': rating - (i-1) < 1 && rating - (i-1) > 0}" class="star starIcon">
+                        </i>
+                    </div>
+                    <span class="reviews">
+                        204 Review
+                    </span>
+                </div>
+            </div>
+            <div class="header">
+                <img src="" alt="">
+                <div class="name">Asgaard Sofa</div>
+                <div class="price">Rs. 250,000.00</div>
+                <div class="rating">
+                    <span class="value">
+                        4.7
+                    </span>
+                    <div class="stars">
+                        <i *ngFor="let i of [1,2,3,4,5]" [ngClass]="{'full': i < rating && rating - i >= 0,
+                            'half': rating - (i-1) < 1 && rating - (i-1) > 0}" class="star starIcon">
+                        </i>
+                    </div>
+                    <span class="reviews">
+                        204 Review
+                    </span>
+                </div>
+            </div>
         </div>
         <div class="addProduct">
             <div class="title">
@@ -81,11 +135,12 @@
                     </td>
 
                 </ng-container>
-
                 <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
             </table>
         </div>
+        <div class="blankbox">
 
+        </div>
     </div>
 </div>
 </div>

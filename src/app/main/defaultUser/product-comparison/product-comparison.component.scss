@@ -2,16 +2,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 34px 96px 112px 96px;
+    
+
+    overflow-x: scroll;
 }
-.col{
+
+.col {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 34px 96px 112px 96px;
 }
-.row {
 
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .wrapper {
+    }
 
     &.header {
         display: flex;
@@ -24,6 +34,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            margin-right: 75px;
 
             .title {
                 font-size: 28px;
@@ -48,6 +59,10 @@
 
             .header {
                 padding: 0px 25px 0px 25px;
+
+                &:first-child {
+                    padding-left: 0px;
+                }
 
                 &>img {
                     width: 280px;
@@ -190,8 +205,13 @@
 
     &.properties {
 
+
         .tableWrapper {
             .mat-elevation-z0 {
+                .mat-column-0 {
+                    width: 300px;
+                }
+
                 .text {
                     display: inline-block;
                     max-width: 241px;
@@ -204,8 +224,9 @@
 
                 ::ng-deep {
                     td.mdc-data-table__cell {
+                        width: 334px;
+                        max-width: 334px;
                         border-bottom-style: none;
-                        max-width: 344px;
                         padding: 34px 43px 0px 60px;
                         border-left: 1px solid #E8E8E8;
                         overflow-wrap: break-word;
@@ -213,21 +234,23 @@
 
                         &:first-child {
                             border-left: none;
-                            max-width: 301px;
                             padding-left: 0px;
                             padding-right: 0px;
+                            width: 255px;
+                            max-width: 255px;
                         }
 
                         &.section {
-                            .text{
+                            .text {
                                 font-size: 28px;
                                 font-style: normal;
                                 font-weight: 600;
                                 line-height: 126.5%;
                                 text-transform: capitalize
                             }
+
                             padding-top: 96px;
-                            
+
                         }
                     }
 
@@ -238,6 +261,9 @@
             }
         }
 
+        .blankbox {
+            width: 250px;
+        }
 
 
     }
