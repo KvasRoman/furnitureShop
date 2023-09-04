@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class NumberWithCommasPipe implements PipeTransform {
 
-    transform(value: number | null): string {
+    transform(value: number | null | undefined): string {
         if(value == null) return '';
         var parts = value.toString().split(".");
         parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");

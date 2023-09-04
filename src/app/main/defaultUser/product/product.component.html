@@ -1,34 +1,31 @@
 <div class="row productAbout">
     <div class="leftSide">
         <div class="sideImages">
-            <div class="imageWrapper"><img src="/assets/images/fakeDBImages/product/set 2.png" alt=""></div>
-            <div class="imageWrapper"><img src="/assets/images/fakeDBImages/product/set_2 1.png" alt=""></div>
-            <div class="imageWrapper"><img src="/assets/images/fakeDBImages/product/sofa 1.png" alt=""></div>
-            <div class="imageWrapper"><img src="/assets/images/fakeDBImages/product/maya.png" alt=""></div>
-            <div class="imageWrapper"><img src="/assets/images/fakeDBImages/product/asgaard.png" alt=""></div>
+            <div class="imageWrapper" *ngFor="let image of data.productImages"><img src="{{image.url}}" alt=""></div>
+            
         </div>
         <div class="mainImage">
-            <img src="/assets/images/fakeDBImages/product/asgaard large.png" alt="">
+            <img src="{{data.productImages[0].url}}" alt="">
         </div>
     </div>
     <div class="rightSide">
         <div class="col">
-            <h2 class="title">Asgaard sofa</h2>
-            <p class="price">Rs. 250,000.00</p>
+            <h2 class="title">{{data.name}}</h2>
+            <p class="price">$ {{data.price | numberWithCommas}}</p>
             <div class="review">
                 <div class="stars">
-                    <i *ngFor="let i of [1,2,3,4,5]" [ngClass]="{'full': i < rating && rating - i >= 0,
-                         'half': rating - (i-1) < 1 && rating - (i-1) > 0}" class="star starIcon">
+                    
+                    <i *ngFor="let i of [1,2,3,4,5]" [ngClass]="{'full': i < data.rating && data.rating - i >= 0,
+                         'half': data.rating - (i-1) < 1 && data.rating - (i-1) > 0}" class="star starIcon">
                     </i>
+                    
                 </div>
                 <div class="reviewCouter">
                     5 Customer Review
                 </div>
             </div>
             <div class="shortDescription">
-                Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted
-                hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.
-
+                {{data.shortDescription}}
 
             </div>
             <div class="select">
@@ -77,10 +74,10 @@
             <div class="bottomInfo">
                 <ul>
                     <li><span>SKU</span><span>:</span>
-                        <span>SS001</span>
+                        <span>{{data.sku}}</span>
                     </li>
                     <li><span>Category</span><span>:</span>
-                        <span>Sofas</span>
+                        <span>{{data.category}}</span>
                     </li>
                     <li><span>Tags</span><span>:</span>
                         <span>Sofa, Chair, Home, Shop</span>
@@ -106,17 +103,7 @@
     <div class="folders">
         <div class="folder description">
             <div class="text">
-                <p>Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes
-                    the
-                    unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
-                </p>
-                <p>
-                    Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering.
-                    Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted
-                    hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is
-                    both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your
-                    personal preferences while the guitar-influenced leather strap enables easy and stylish travel.
-                </p>
+                {{data.description}}
             </div>
 
             <div class="images">

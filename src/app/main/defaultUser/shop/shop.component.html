@@ -14,7 +14,7 @@
         <div class="input">
             <div class="label">Show</div>
             <form>
-                <mat-select (valueChange)="onProductRangeChange($event)" placeholder="16" name="productRange"
+                <mat-select (valueChange)="onProductRangeChange($event)" [value]="16" placeholder="16" name="productRange"
                     [ngClass]="{'mat-select': true, 'productRange': true, 'changed': pRangeChanged}">
                     <mat-option *ngFor="let pRange of productRange" [value]="pRange">
                         {{pRange}}
@@ -25,7 +25,7 @@
         </div>
         <div class="input">
             <div class="label">Short by</div>
-            <mat-select (valueChange)="onOrderByChange($event)" name="orderBy"
+            <mat-select (valueChange)="onOrderByChange($event)" [value]="'Default'" placeholder="Default" name="orderBy"
                 [ngClass]="{'mat-select': true, 'orderBy': true, 'changed': orderByChanged}">
                 <mat-option *ngFor="let ob of orderBy" [value]="ob.value">
                     {{ob.title}}
