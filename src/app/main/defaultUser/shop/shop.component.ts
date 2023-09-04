@@ -23,12 +23,12 @@ export class ShopComponent {
     64
   ];
   
-  orderBySelected: string = '';
+  orderBySelected: string = 'Default';
   orderByChanged: boolean = false;
   public readonly orderBy: {title: string, value: string}[] = [
-    {title: 'Default', value: ''},
-    {title: 'Name', value: 'name'},
-    {title: 'Price', value: 'price'},
+    {title: 'Default', value: 'Default'},
+    {title: 'Name', value: 'NameAsc'},
+    {title: 'Price', value: 'PriceAsc'},
   ];
   
   currentPage: number = 1;
@@ -54,15 +54,30 @@ export class ShopComponent {
     Math.ceil(value / this.pRangeSelected)
   }
   ngOnInit() {
-    this.$data = this.http.get<ProductCard[]>(Configuration.apiUrl + '/ProductCard')
+     this.getProducts();
   }
-  onProductRangeChange(){
+  onProductRangeChange(value: number){
     this.pRangeChanged = true;
+    this.pRangeSelected = value;
+    this.getProducts();
   }
-  onOrderByChange(){
+  onOrderByChange(value: string){
     this.orderByChanged = true;
+    this.orderBySelected = value;
+    this.getProducts();
   }
   changePage(page: number){
     this.currentPage = page;
+    this.getProducts();
+  }
+  private getProducts(){
+    this.$data = this.http.get<ProductCard[]>(Configuration.apiUrl + '/ProductCard',{
+      params: {
+        Page: this.currentPage - 1,
+        PageSize: this.pRangeSelected,
+        OrderBy: this.orderBySelected
+      }
+     }
+     )
   }
 }
