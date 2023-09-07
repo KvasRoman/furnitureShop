@@ -123,6 +123,10 @@ $primary: #B88E2F;
                 font-weight: 600;
                 color: $primary;
                 background-color: $white;
+                transition-duration: 0.3s;
+                &:hover{
+                    background-color: transparentize($color: $white, $amount: 0.15);
+                }
             }
 
             .subactions {
@@ -132,17 +136,32 @@ $primary: #B88E2F;
 
                 .action {
                     display: inline-flex;
+                    position: relative;
                     align-items: center;
                     flex-direction: row;
                     font-size: 16px;
                     font-weight: 600;
                     line-height: 150%;
                     color: $white;
-
+                    
                     margin-left: 20px;
 
                     &:first-child {
                         margin-left: 0px;
+                    }
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        height: 1px;
+                        bottom: 0px;
+                        width: 100%;
+                        transition-duration: 0.3s;
+                    }
+                    &:hover{
+                        &::after{
+                            background-color: $white;
+                        }
+                        
                     }
                 }
 
