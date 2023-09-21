@@ -33,14 +33,35 @@ export class ShopComponent {
   
   currentPage: number = 1;
   paginationDisplayRange: number = 3;
-  public readonly totalResultsNumber: number = 0;
+  public totalResultsNumber: number = 0;
   public totalPageNumber: number = 0;
-  public $data: Observable<{
-    total: number,
-    cards: ProductCard[]
-  }>
+
+  public products?: ProductCard[];
+
+  private productsSubscription : Subscription;
+
   constructor(private userStateService: UserStateService, private http: HttpClient) {
-    this.$data = this.getProducts();
+    this.productsSubscription = this.http.get<{
+      total: number,
+      cards: ProductCard[]
+    }>(Configuration.apiUrl + '/ProductCard',{
+      params: {
+        Page: this.currentPage - 1,
+        PageSize: this.pRangeSelected,
+        OrderBy: this.orderBySelected
+      }
+     }
+     ).subscribe(p => {
+      this.products = p.cards;
+      this.totalResultsNumber = p.total;
+      this.totalPageNumber = this.toPageNumber(this.totalResultsNumber);
+     })
+    
+  }
+  toPageNumber(value: number): number{
+    return Math.ceil(value / this.pRangeSelected)
+  }
+  ngOnInit() {
     this.userStateService.updateMain({
       crumbBar: crumbBarTypes.big,
       warrantyBar: true,
@@ -53,15 +74,10 @@ export class ShopComponent {
       }
     });
   }
-  toPageNumber(value: number){
-    Math.ceil(value / this.pRangeSelected)
-  }
-  ngOnInit() {
-     this.getProducts();
-  }
   onProductRangeChange(value: number){
     this.pRangeChanged = true;
     this.pRangeSelected = value;
+    this.totalPageNumber = this.toPageNumber(this.totalResultsNumber);
     this.getProducts();
   }
   onOrderByChange(value: string){
@@ -73,11 +89,10 @@ export class ShopComponent {
     this.currentPage = page;
     this.getProducts();
   }
-  private getProducts(): Observable<{
-    total: number,
-    cards: ProductCard[]
-  }>{
-    this.$data = this.http.get<{
+  private getProducts(){
+    this.productsSubscription.unsubscribe();
+    this.products = undefined;
+    this.productsSubscription = this.http.get<{
       total: number,
       cards: ProductCard[]
     }>(Configuration.apiUrl + '/ProductCard',{
@@ -87,8 +102,10 @@ export class ShopComponent {
         OrderBy: this.orderBySelected
       }
      }
-     )
-     return this.$data;
+     ).subscribe(p => {
+      this.products = p.cards;
+      this.totalResultsNumber = p.total;
+     })
 
   }
 }
