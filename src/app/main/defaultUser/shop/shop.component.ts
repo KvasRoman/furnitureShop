@@ -15,21 +15,24 @@ import { UserStateService } from 'src/app/services/user-state.service';
   
 })
 export class ShopComponent {
+  
   pRangeSelected: number = 16;
   pRangeChanged: boolean = false;
+  orderBySelected: string = 'Default';
+  orderByChanged: boolean = false;
+
   public readonly productRange: number[] = [
     16,
     32,
     64
   ];
-  
-  orderBySelected: string = 'Default';
-  orderByChanged: boolean = false;
   public readonly orderBy: {title: string, value: string}[] = [
     {title: 'Default', value: 'Default'},
     {title: 'Name', value: 'NameAsc'},
     {title: 'Price', value: 'PriceAsc'},
   ];
+  
+  
   
   currentPage: number = 1;
   paginationDisplayRange: number = 3;
@@ -88,6 +91,9 @@ export class ShopComponent {
   changePage(page: number){
     this.currentPage = page;
     this.getProducts();
+  }
+  getProductRangeLimit(number: number): number{
+    return number > this.totalResultsNumber ? this.totalResultsNumber : number;
   }
   private getProducts(){
     this.productsSubscription.unsubscribe();

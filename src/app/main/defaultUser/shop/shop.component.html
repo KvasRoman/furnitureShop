@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="productRange">
-            Showing {{(currentPage - 1) * pRangeSelected + 1}}–{{currentPage * pRangeSelected}} of {{totalResultsNumber}} results
+            Showing {{(currentPage - 1) * pRangeSelected + 1}}–{{getProductRangeLimit(currentPage * pRangeSelected)}} of {{totalResultsNumber}} results
         </div>
     </div>
     <div class="rightSide">
