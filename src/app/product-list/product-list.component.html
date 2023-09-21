@@ -1,5 +1,5 @@
 <div class="productItems">
-    <div *ngFor="let i of data | async | slice:0:quantity" class="productItem">
+    <div *ngFor="let i of data | slice:0:quantity" class="productItem">
         <div class="imageWrapper">
             <img src={{i.imageUrl}} alt="">
         </div>

@@ -35,9 +35,12 @@ export class ShopComponent {
   paginationDisplayRange: number = 3;
   public readonly totalResultsNumber: number = 0;
   public totalPageNumber: number = 0;
-  public $data?: Observable<ProductCard[]>
+  public $data: Observable<{
+    total: number,
+    cards: ProductCard[]
+  }>
   constructor(private userStateService: UserStateService, private http: HttpClient) {
-
+    this.$data = this.getProducts();
     this.userStateService.updateMain({
       crumbBar: crumbBarTypes.big,
       warrantyBar: true,
@@ -70,8 +73,14 @@ export class ShopComponent {
     this.currentPage = page;
     this.getProducts();
   }
-  private getProducts(){
-    this.$data = this.http.get<ProductCard[]>(Configuration.apiUrl + '/ProductCard',{
+  private getProducts(): Observable<{
+    total: number,
+    cards: ProductCard[]
+  }>{
+    this.$data = this.http.get<{
+      total: number,
+      cards: ProductCard[]
+    }>(Configuration.apiUrl + '/ProductCard',{
       params: {
         Page: this.currentPage - 1,
         PageSize: this.pRangeSelected,
@@ -79,5 +88,7 @@ export class ShopComponent {
       }
      }
      )
+     return this.$data;
+
   }
 }

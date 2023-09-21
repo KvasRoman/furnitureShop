@@ -327,7 +327,35 @@ $white: #FFFFFF;
         }
     }
 }
+::-webkit-scrollbar {
+    width: 20px;
+    position: absolute;
+    left: 0;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey; 
+    background-clip: content-box;
+    border: 5px solid transparent;
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #B88E2F; 
 
+    background-clip: content-box;
+    border: 5px solid transparent;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #866823; 
+    background-clip: content-box;
+    border: 5px solid transparent;
+  }
 
 html,
 body {

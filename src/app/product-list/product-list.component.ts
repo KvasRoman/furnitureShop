@@ -10,7 +10,7 @@ import { CartService } from '../services/cart.service';
 })
 export class ProductListComponent {
     @Input() quantity: number = 0;
-    @Input() data: Observable<ProductCard[]> | null =  null;
+    @Input() data: ProductCard[] | undefined | null =  [];
     constructor(private cartService: CartService) {
         
     }

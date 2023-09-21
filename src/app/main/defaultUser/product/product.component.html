@@ -119,7 +119,7 @@
     <h1 class="title">
         Related Products
     </h1>
-    <app-product-list [data]="ralatedProducts" [quantity]="4"></app-product-list>
+    <app-product-list [data]="(ralatedProducts | async)" [quantity]="4"></app-product-list>
     <div class="showMore clickable">
         Show More
     </div>

@@ -45,7 +45,7 @@
 </section>
 <section class="row productList">
     <h1 class="title1">Our Products</h1>
-    <app-product-list [quantity]=8 [data]=this.data></app-product-list>
+    <app-product-list [quantity]=8 [data]="(this.data | async)"></app-product-list>
     <div class="button clickable">Show More</div>
 </section>
 <section class="row inspiration">
